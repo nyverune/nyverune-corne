@@ -1,0 +1,19 @@
+{
+    "keyboard": "crkbd/rev1",
+    "keymap": "nyverune_everyday",
+    "layout": "LAYOUT_split_3x6_3",
+    "features": {
+        "bootmagic": true,
+        "extrakey": true,
+        "mousekey": false,
+        "combo": true,
+        "tap_dance": true,
+        "oled": false,
+        "rgblight": false
+    },
+    "meta": {
+        "maintainer": "nyverune",
+        "description": "Nyverune custom QMK configurations for Corne (crkbd) 3x6+3",
+        "url": "https://github.com/nyverune/nyverune-corne"
+    }
+}
