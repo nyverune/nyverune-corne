@@ -2,9 +2,11 @@
 """
 Corne 3x6+3 SVG & Text Layout Diagram Generator for Nyverune Corne.
 Generates publication-quality SVG diagrams and ASCII representations for every layer,
-styled with the official Nyverune color palette.
+styled with the official Nyverune color palette and two-tier keycap typography.
+Strictly XML-escapes all strings (&, <, >, ", ') to ensure 100% W3C / browser SVG validity.
 """
 
+import html
 import json
 import os
 import sys
@@ -62,10 +64,14 @@ COLORS = {
     "trans_text": "#443b54",
 }
 
-KEY_WIDTH = 56
-KEY_HEIGHT = 56
+KEY_WIDTH = 62
+KEY_HEIGHT = 60
 KEY_GAP = 8
-SPLIT_GAP = 60
+SPLIT_GAP = 64
+
+def xml_escape(text: str) -> str:
+    """Escapes XML entities (&, <, >, \", ') for valid SVG rendering."""
+    return html.escape(str(text), quote=True)
 
 def get_key_category(key_name: str) -> str:
     key_name = key_name.upper()
@@ -81,174 +87,249 @@ def get_key_category(key_name: str) -> str:
         return "nav"
     return "alpha"
 
-def friendly_label(key_code: str) -> str:
+def parse_key_labels(key_code: str) -> tuple[str, str]:
+    """
+    Returns (primary_label, sub_label) for elegant 2-tier keycap rendering.
+    If sub_label is empty, primary_label is centered vertically.
+    """
     clean = key_code.replace("KC_", "").replace("ES_", "")
-    translations = {
-        "BSPC": "⌫",
-        "ENT": "⏎",
-        "TAB": "⇥",
-        "SPC": "␣",
-        "ESC": "Esc",
-        "DEL": "Del",
-        "LSFT": "⇧ Shift",
-        "RSFT": "Shift ⇧",
-        "LGUI": "◆ Super",
-        "RALT": "AltGr",
-        "NTIL": "Ñ",
-        "ACUT": "´ ¨",
-        "CCED": "Ç",
-        "COMM": ",",
-        "DOT": ".",
-        "MINS": "-",
-        "PLUS": "+",
-        "ASTR": "*",
-        "SLSH": "/",
-        "EQLS": "=",
-        "QUES": "?",
-        "IQUE": "¿",
-        "IEXC": "¡",
-        "EXCL": "!",
-        "DQOT": "\"",
-        "HASH": "#",
-        "DLLR": "$",
-        "PERC": "%",
-        "AMPR": "&",
-        "LPRN": "(",
-        "RPRN": ")",
-        "LBRC": "[",
-        "RBRC": "]",
-        "LCBR": "{",
-        "RCBR": "}",
-        "LABK": "<",
-        "RABK": ">",
-        "PIPE": "|",
-        "BSLS": "\\",
-        "TILD": "~",
-        "EURO": "€",
-        "ATSN": "@",
-        "COLN": ":",
-        "SCLN": ";",
-        "UNDS": "_",
-        "TRNS": "▽",
-        "NO": "·",
-        "QK_BOOT": "BOOT",
-        "EE_CLR": "CLR",
-        "NK_TOGG": "NKRO",
-        "BRID": "Bri-",
-        "BRIU": "Bri+",
-        "VOLD": "Vol-",
-        "VOLU": "Vol+",
-        "MUTE": "Mute",
-        "MPLY": "⏯",
-        "MNXT": "⏭",
-        "MPRV": "⏮",
-        "VIM_SAVE": ":w",
-        "VIM_QUIT": ":q",
-        "VIM_VSPLIT": "<C-w>v",
-        "VIM_HSPLIT": "<C-w>s",
-        "VIM_BNEXT": ":bnext",
-        "VIM_BPREV": ":bprev",
-        "VIM_DEF": "gd",
-        "VIM_REF": "gr",
-        "VIM_DIAGN": "]d",
-        "VIM_DIAGP": "[d",
-        "VIM_HOVER": "K (doc)",
-        "VIM_ACT": "<spc>ca",
-        "VIM_REN": "<spc>rn",
-    }
-    if key_code in translations:
-        return translations[key_code]
-    if clean in translations:
-        return translations[clean]
+
+    # Dual-role Mod-Tap keys
     if key_code.startswith("LCTL_T("):
         inner = key_code[7:-1].replace("KC_", "")
-        return f"{inner}/Ctrl"
+        return (inner.capitalize(), "Ctrl")
+    if key_code.startswith("LT("):
+        parts = key_code[3:-1].split(",")
+        layer_num = parts[0].strip()
+        tap_key = parts[1].strip().replace("KC_", "") if len(parts) > 1 else ""
+        return (tap_key, f"L{layer_num}")
+
+    # Momentary layer switches
     if key_code.startswith("MO("):
         layer_num = key_code[3:-1]
-        layer_map = {"1": "Nav", "2": "Sym", "3": "Num", "4": "VimNav", "5": "VimCode", "6": "Adjust"}
-        return f"MO({layer_map.get(layer_num, layer_num)})"
+        layer_names = {
+            "1": "NAV",
+            "2": "SYM",
+            "3": "NUM",
+            "4": "VIM",
+            "5": "CODE",
+            "6": "ADJ",
+            "_NAV": "NAV",
+            "_SYM": "SYM",
+            "_NUM": "NUM",
+            "_VIM_NAV": "VIM",
+            "_VIM_CODE": "CODE",
+            "_ADJUST": "ADJ"
+        }
+        name = layer_names.get(layer_num, f"L{layer_num}")
+        return (name, "HOLD")
+
+    # Control combos
     if key_code.startswith("LCTL("):
         inner = key_code[5:-1].replace("KC_", "")
-        return f"C-{inner}"
-    return clean
+        return (f"^ {inner}", "")
+
+    # Standard mappings
+    mappings = {
+        "TAB": ("Tab", "⇥"),
+        "BSPC": ("Bksp", "⌫"),
+        "ENT": ("Enter", "⏎"),
+        "SPC": ("Space", "␣"),
+        "ESC": ("Esc", ""),
+        "DEL": ("Del", "⌦"),
+        "LSFT": ("Shift", "⇧"),
+        "RSFT": ("Shift", "⇧"),
+        "LGUI": ("Super", "◆"),
+        "RALT": ("AltGr", ""),
+        "NTIL": ("Ñ", ""),
+        "ACUT": ("´", "¨"),
+        "CCED": ("Ç", ""),
+        "COMM": (",", ";"),
+        "DOT": (".", ":"),
+        "MINS": ("-", "_"),
+        "PLUS": ("+", "*"),
+        "ASTR": ("*", ""),
+        "SLSH": ("/", "?"),
+        "EQLS": ("=", "+"),
+        "QUES": ("?", ""),
+        "IQUE": ("¿", ""),
+        "IEXC": ("¡", ""),
+        "EXCL": ("!", ""),
+        "DQOT": ("\"", ""),
+        "HASH": ("#", ""),
+        "DLLR": ("$", ""),
+        "PERC": ("%", ""),
+        "AMPR": ("&", ""),
+        "LPRN": ("(", ""),
+        "RPRN": (")", ""),
+        "LBRC": ("[", ""),
+        "RBRC": ("]", ""),
+        "LCBR": ("{", ""),
+        "RCBR": ("}", ""),
+        "LABK": ("<", ""),
+        "RABK": (">", ""),
+        "PIPE": ("|", ""),
+        "BSLS": ("\\", ""),
+        "TILD": ("~", ""),
+        "EURO": ("€", ""),
+        "ATSN": ("@", ""),
+        "COLN": (":", ""),
+        "SCLN": (";", ""),
+        "UNDS": ("_", ""),
+        "TRNS": ("▽", ""),
+        "NO": ("·", ""),
+        "QK_BOOT": ("BOOT", "Reset"),
+        "EE_CLR": ("CLEAR", "EEPROM"),
+        "NK_TOGG": ("NKRO", "Toggle"),
+        "BRID": ("Bri-", "☼"),
+        "BRIU": ("Bri+", "☼"),
+        "VOLD": ("Vol-", "🔉"),
+        "VOLU": ("Vol+", "🔊"),
+        "MUTE": ("Mute", "🔇"),
+        "MPLY": ("Play", "⏯"),
+        "MNXT": ("Next", "⏭"),
+        "MPRV": ("Prev", "⏮"),
+        "HOME": ("Home", "↖"),
+        "END": ("End", "↘"),
+        "PGUP": ("PgUp", "⇞"),
+        "PGDN": ("PgDn", "⇟"),
+        "UP": ("Up", "↑"),
+        "DOWN": ("Down", "↓"),
+        "LEFT": ("Left", "←"),
+        "RGHT": ("Right", "→"),
+        "INS": ("Ins", ""),
+        "VIM_SAVE": (":w", "Save"),
+        "VIM_QUIT": (":q", "Quit"),
+        "VIM_VSPLIT": ("vsplit", "^w v"),
+        "VIM_HSPLIT": ("split", "^w s"),
+        "VIM_BNEXT": (":bnext", "Buffer"),
+        "VIM_BPREV": (":bprev", "Buffer"),
+        "VIM_DEF": ("gd", "Def"),
+        "VIM_REF": ("gr", "Refs"),
+        "VIM_DIAGN": ("]d", "Next"),
+        "VIM_DIAGP": ("[d", "Prev"),
+        "VIM_HOVER": ("K", "Hover"),
+        "VIM_ACT": ("Code", "Action"),
+        "VIM_REN": ("Rename", "LSP"),
+    }
+
+    if key_code in mappings:
+        return mappings[key_code]
+    if clean in mappings:
+        return mappings[clean]
+
+    return (clean, "")
 
 def render_svg_layer(profile_name: str, layer_data: dict) -> str:
     layer_name = layer_data["name"]
     layer_title = layer_data.get("title", layer_name)
+    layer_desc = layer_data.get("description", "")
     keys = layer_data["keys"]
 
-    total_width = 12 * (KEY_WIDTH + KEY_GAP) + SPLIT_GAP + 60
-    total_height = 4 * (KEY_HEIGHT + KEY_GAP) + 120
+    total_width = 12 * (KEY_WIDTH + KEY_GAP) + SPLIT_GAP + 64
+    total_height = 4 * (KEY_HEIGHT + KEY_GAP) + 130
+
+    font_family = "system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+
+    # XML Escape titles and descriptions
+    escaped_profile = xml_escape(profile_name.capitalize())
+    escaped_layer_name = xml_escape(layer_name)
+    escaped_title = xml_escape(layer_title)
+    escaped_desc = xml_escape(layer_desc)
 
     svg_lines = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {total_width} {total_height}" width="{total_width}" height="{total_height}">',
         '  <defs>',
         '    <style>',
-        f'      .title {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 20px; font-weight: 700; fill: {NYVERUNE_PALETTE["ghost_white"]}; }}',
-        f'      .subtitle {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 13px; fill: {NYVERUNE_PALETTE["soft_lilac"]}; }}',
-        '      .key-label {{ font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace; font-size: 13px; font-weight: 600; text-anchor: middle; dominant-baseline: middle; }}',
+        f'      .title {{ font-family: {font_family}; font-size: 20px; font-weight: 700; fill: {NYVERUNE_PALETTE["ghost_white"]}; letter-spacing: 0.5px; }}',
+        f'      .subtitle {{ font-family: {font_family}; font-size: 13px; fill: {NYVERUNE_PALETTE["soft_lilac"]}; }}',
+        f'      .key-main {{ font-family: {font_family}; font-weight: 600; text-anchor: middle; dominant-baseline: central; }}',
+        f'      .key-sub {{ font-family: {font_family}; font-weight: 500; font-size: 10px; text-anchor: middle; dominant-baseline: central; }}',
         '    </style>',
-        f'    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">',
-        f'      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#7E22CE" flood-opacity="0.25"/>',
-        f'    </filter>',
+        '    <filter id="keyGlow" x="-20%" y="-20%" width="140%" height="140%">',
+        f'      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="{NYVERUNE_PALETTE["deep_violet"]}" flood-opacity="0.3"/>',
+        '    </filter>',
         '  </defs>',
-        f'  <rect width="{total_width}" height="{total_height}" fill="{COLORS["bg"]}" rx="14" stroke="{NYVERUNE_PALETTE["elevated"]}" stroke-width="2" />',
-        f'  <circle cx="24" cy="40" r="5" fill="{NYVERUNE_PALETTE["neon_violet"]}" />',
-        f'  <text x="38" y="45" class="title">{profile_name.capitalize()} — Layer {layer_data["id"]}: {layer_name}</text>',
-        f'  <text x="38" y="68" class="subtitle">{layer_title}: {layer_data.get("description", "")}</text>',
-        '  <g transform="translate(30, 95)">'
+        f'  <!-- Canvas Background -->',
+        f'  <rect width="{total_width}" height="{total_height}" fill="{COLORS["bg"]}" rx="16" stroke="{NYVERUNE_PALETTE["elevated"]}" stroke-width="2" />',
+        f'  <!-- Header -->',
+        f'  <circle cx="36" cy="42" r="6" fill="{NYVERUNE_PALETTE["neon_violet"]}" />',
+        f'  <text x="52" y="47" class="title">{escaped_profile} — Layer {layer_data["id"]}: {escaped_layer_name}</text>',
+        f'  <text x="52" y="70" class="subtitle">{escaped_title}: {escaped_desc}</text>',
+        '  <g transform="translate(32, 96)">'
     ]
 
-    # Render Left Half (cols 0-5) and Right Half (cols 6-11)
+    # Helper to render keycap
+    def render_keycap(x, y, w, h, raw_key):
+        category = get_key_category(raw_key)
+        main_label, sub_label = parse_key_labels(raw_key)
+
+        # XML escape the key labels
+        esc_main = xml_escape(main_label)
+        esc_sub = xml_escape(sub_label)
+
+        bg_col = COLORS.get(f"{category}", COLORS["alpha"])
+        border_col = COLORS.get(f"{category}_border", COLORS["border"])
+        main_text_col = COLORS.get(f"{category}_text", COLORS["text"])
+        sub_text_col = NYVERUNE_PALETTE["soft_lilac"] if category != "thumb_layer" else NYVERUNE_PALETTE["dream_pink"]
+
+        if len(main_label) >= 6:
+            font_size = 11
+        elif len(main_label) >= 4:
+            font_size = 12
+        else:
+            font_size = 14
+
+        key_elements = []
+        key_elements.append(
+            f'    <rect x="{x}" y="{y}" width="{w}" height="{h}" rx="9" ry="9" fill="{bg_col}" stroke="{border_col}" stroke-width="1.6" filter="url(#keyGlow)" />'
+        )
+
+        cx = x + w / 2
+        if sub_label:
+            cy_main = y + h / 2 - 8
+            cy_sub = y + h / 2 + 10
+            key_elements.append(
+                f'    <text x="{cx}" y="{cy_main}" font-size="{font_size}" fill="{main_text_col}" class="key-main">{esc_main}</text>'
+            )
+            key_elements.append(
+                f'    <text x="{cx}" y="{cy_sub}" fill="{sub_text_col}" class="key-sub">{esc_sub}</text>'
+            )
+        else:
+            cy_main = y + h / 2
+            key_elements.append(
+                f'    <text x="{cx}" y="{cy_main}" font-size="{font_size}" fill="{main_text_col}" class="key-main">{esc_main}</text>'
+            )
+
+        return "\n".join(key_elements)
+
+    # Render Rows 0-2 (12 keys per row)
     for r in range(3):
         for c in range(12):
             key_idx = r * 12 + c
             raw_key = keys[key_idx]
-            category = get_key_category(raw_key)
-            label = friendly_label(raw_key)
 
             x = c * (KEY_WIDTH + KEY_GAP)
             if c >= 6:
                 x += SPLIT_GAP
             y = r * (KEY_HEIGHT + KEY_GAP)
 
-            bg_col = COLORS.get(f"{category}", COLORS["alpha"])
-            border_col = COLORS.get(f"{category}_border", COLORS["border"])
-            text_col = COLORS.get(f"{category}_text", COLORS["text"])
+            svg_lines.append(render_keycap(x, y, KEY_WIDTH, KEY_HEIGHT, raw_key))
 
-            svg_lines.append(
-                f'    <rect x="{x}" y="{y}" width="{KEY_WIDTH}" height="{KEY_HEIGHT}" rx="8" ry="8" fill="{bg_col}" stroke="{border_col}" stroke-width="1.6" filter="url(#glow)" />'
-            )
-            svg_lines.append(
-                f'    <text x="{x + KEY_WIDTH/2}" y="{y + KEY_HEIGHT/2}" fill="{text_col}" class="key-label">{label}</text>'
-            )
-
-    # Thumbs (Row 3, 6 keys total)
+    # Render Thumbs (Row 3, 6 keys)
     thumb_positions = [
         (3, 36), (4, 37), (5, 38),
         (6, 39), (7, 40), (8, 41)
     ]
 
-    thumb_y = 3 * (KEY_HEIGHT + KEY_GAP) + 6
+    thumb_y = 3 * (KEY_HEIGHT + KEY_GAP) + 8
     for col_align, key_idx in thumb_positions:
         raw_key = keys[key_idx]
-        category = get_key_category(raw_key)
-        label = friendly_label(raw_key)
-
         x = col_align * (KEY_WIDTH + KEY_GAP)
         if col_align >= 6:
             x += SPLIT_GAP
 
-        bg_col = COLORS.get(f"{category}", COLORS["thumb_layer"])
-        border_col = COLORS.get(f"{category}_border", COLORS["thumb_layer_border"])
-        text_col = COLORS.get(f"{category}_text", COLORS["thumb_layer_text"])
-
-        svg_lines.append(
-            f'    <rect x="{x}" y="{thumb_y}" width="{KEY_WIDTH}" height="{KEY_HEIGHT}" rx="8" ry="8" fill="{bg_col}" stroke="{border_col}" stroke-width="1.6" />'
-        )
-        svg_lines.append(
-            f'    <text x="{x + KEY_WIDTH/2}" y="{thumb_y + KEY_HEIGHT/2}" fill="{text_col}" class="key-label">{label}</text>'
-        )
+        svg_lines.append(render_keycap(x, thumb_y, KEY_WIDTH, KEY_HEIGHT, raw_key))
 
     svg_lines.append('  </g>')
     svg_lines.append('</svg>')
@@ -261,12 +342,12 @@ def generate_text_diagram(layer_data: dict) -> str:
     lines.append("")
     lines.append("```")
     for r in range(3):
-        left_half = " ".join(f"[{friendly_label(keys[r*12 + c]):^7}]" for c in range(6))
-        right_half = " ".join(f"[{friendly_label(keys[r*12 + c]):^7}]" for c in range(6, 12))
+        left_half = " ".join(f"[{parse_key_labels(keys[r*12 + c])[0]:^7}]" for c in range(6))
+        right_half = " ".join(f"[{parse_key_labels(keys[r*12 + c])[0]:^7}]" for c in range(6, 12))
         lines.append(f"{left_half}    {right_half}")
 
-    lt = " ".join(f"[{friendly_label(keys[36 + i]):^7}]" for i in range(3))
-    rt = " ".join(f"[{friendly_label(keys[39 + i]):^7}]" for i in range(3))
+    lt = " ".join(f"[{parse_key_labels(keys[36 + i])[0]:^7}]" for i in range(3))
+    rt = " ".join(f"[{parse_key_labels(keys[39 + i])[0]:^7}]" for i in range(3))
     spacer = " " * (3 * 10)
     lines.append(f"{spacer}{lt}    {rt}")
     lines.append("```")
@@ -274,7 +355,7 @@ def generate_text_diagram(layer_data: dict) -> str:
     return "\n".join(lines)
 
 def main():
-    print("[*] Generating diagrams for Everyday and Neovim layouts with Nyverune palette...")
+    print("[*] Re-generating SVG diagrams with strict XML escaping...")
     profiles = ["everyday", "neovim"]
 
     for profile in profiles:
@@ -298,7 +379,7 @@ def main():
 
             with open(svg_file, "w", encoding="utf-8") as f:
                 f.write(svg_content)
-            print(f"  [✓] Generated SVG: {svg_file.relative_to(ROOT_DIR)}")
+            print(f"  [✓] Updated SVG: {svg_file.relative_to(ROOT_DIR)}")
 
             text_dia = generate_text_diagram(layer)
             md_summary.append(f"## Layer {layer['id']}: {layer['name']}\n")
@@ -308,9 +389,9 @@ def main():
         index_md = out_dir / "README.md"
         with open(index_md, "w", encoding="utf-8") as f:
             f.write("\n".join(md_summary))
-        print(f"  [✓] Generated Diagram Summary: {index_md.relative_to(ROOT_DIR)}")
+        print(f"  [✓] Updated Diagram Summary: {index_md.relative_to(ROOT_DIR)}")
 
-    print("[✓] Diagram generation workflow completed successfully.")
+    print("[✓] All layout diagrams updated successfully.")
 
 if __name__ == "__main__":
     main()

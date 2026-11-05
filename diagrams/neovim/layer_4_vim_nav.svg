@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 968 402" width="968" height="402">
+  <defs>
+    <style>
+      .title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #F6F0FC; letter-spacing: 0.5px; }
+      .subtitle { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; fill: #D9C4FF; }
+      .key-main { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 600; text-anchor: middle; dominant-baseline: central; }
+      .key-sub { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 10px; text-anchor: middle; dominant-baseline: central; }
+    </style>
+    <filter id="keyGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#7E22CE" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Canvas Background -->
+  <rect width="968" height="402" fill="#100D16" rx="16" stroke="#21182B" stroke-width="2" />
+  <!-- Header -->
+  <circle cx="36" cy="42" r="6" fill="#A855F7" />
+  <text x="52" y="47" class="title">Neovim — Layer 4: VIM_NAV</text>
+  <text x="52" y="70" class="subtitle">Neovim Navigation &amp; Splits: HJKL cursor keys, window splits, buffer cycling, jump lists and Neovim scrolling.</text>
+  <g transform="translate(32, 96)">
+    <rect x="0" y="0" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="31.0" y="30.0" font-size="14" fill="#F6F0FC" class="key-main">Esc</text>
+    <rect x="70" y="0" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="101.0" y="22.0" font-size="11" fill="#38BDF8" class="key-main">:bprev</text>
+    <text x="101.0" y="40.0" fill="#D9C4FF" class="key-sub">Buffer</text>
+    <rect x="140" y="0" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#7E22CE" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="171.0" y="30.0" font-size="14" fill="#A855F7" class="key-main">^ U</text>
+    <rect x="210" y="0" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#7E22CE" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="241.0" y="30.0" font-size="14" fill="#A855F7" class="key-main">^ D</text>
+    <rect x="280" y="0" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="311.0" y="22.0" font-size="11" fill="#38BDF8" class="key-main">:bnext</text>
+    <text x="311.0" y="40.0" fill="#D9C4FF" class="key-sub">Buffer</text>
+    <rect x="350" y="0" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="381.0" y="30.0" font-size="14" fill="#443b54" class="key-main">·</text>
+    <rect x="484" y="0" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="515.0" y="22.0" font-size="12" fill="#38BDF8" class="key-main">Home</text>
+    <text x="515.0" y="40.0" fill="#D9C4FF" class="key-sub">↖</text>
+    <rect x="554" y="0" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="585.0" y="22.0" font-size="12" fill="#38BDF8" class="key-main">PgDn</text>
+    <text x="585.0" y="40.0" fill="#D9C4FF" class="key-sub">⇟</text>
+    <rect x="624" y="0" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="655.0" y="22.0" font-size="12" fill="#38BDF8" class="key-main">PgUp</text>
+    <text x="655.0" y="40.0" fill="#D9C4FF" class="key-sub">⇞</text>
+    <rect x="694" y="0" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="725.0" y="22.0" font-size="14" fill="#38BDF8" class="key-main">End</text>
+    <text x="725.0" y="40.0" fill="#D9C4FF" class="key-sub">↘</text>
+    <rect x="764" y="0" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="795.0" y="22.0" font-size="14" fill="#38BDF8" class="key-main">:w</text>
+    <text x="795.0" y="40.0" fill="#D9C4FF" class="key-sub">Save</text>
+    <rect x="834" y="0" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="865.0" y="22.0" font-size="12" fill="#F6F0FC" class="key-main">Bksp</text>
+    <text x="865.0" y="40.0" fill="#D9C4FF" class="key-sub">⌫</text>
+    <rect x="0" y="68" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="31.0" y="98.0" font-size="14" fill="#443b54" class="key-main">▽</text>
+    <rect x="70" y="68" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#7E22CE" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="101.0" y="98.0" font-size="14" fill="#A855F7" class="key-main">^ W</text>
+    <rect x="140" y="68" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="171.0" y="90.0" font-size="12" fill="#38BDF8" class="key-main">split</text>
+    <text x="171.0" y="108.0" fill="#D9C4FF" class="key-sub">^w s</text>
+    <rect x="210" y="68" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="241.0" y="90.0" font-size="11" fill="#38BDF8" class="key-main">vsplit</text>
+    <text x="241.0" y="108.0" fill="#D9C4FF" class="key-sub">^w v</text>
+    <rect x="280" y="68" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="311.0" y="90.0" font-size="14" fill="#F6F0FC" class="key-main">Tab</text>
+    <text x="311.0" y="108.0" fill="#D9C4FF" class="key-sub">⇥</text>
+    <rect x="350" y="68" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="381.0" y="98.0" font-size="14" fill="#F6F0FC" class="key-main">Esc</text>
+    <rect x="484" y="68" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="515.0" y="90.0" font-size="12" fill="#38BDF8" class="key-main">Left</text>
+    <text x="515.0" y="108.0" fill="#D9C4FF" class="key-sub">←</text>
+    <rect x="554" y="68" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="585.0" y="90.0" font-size="12" fill="#38BDF8" class="key-main">Down</text>
+    <text x="585.0" y="108.0" fill="#D9C4FF" class="key-sub">↓</text>
+    <rect x="624" y="68" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="655.0" y="90.0" font-size="14" fill="#38BDF8" class="key-main">Up</text>
+    <text x="655.0" y="108.0" fill="#D9C4FF" class="key-sub">↑</text>
+    <rect x="694" y="68" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="725.0" y="90.0" font-size="12" fill="#38BDF8" class="key-main">Right</text>
+    <text x="725.0" y="108.0" fill="#D9C4FF" class="key-sub">→</text>
+    <rect x="764" y="68" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="795.0" y="98.0" font-size="14" fill="#F6F0FC" class="key-main">:</text>
+    <rect x="834" y="68" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="865.0" y="90.0" font-size="12" fill="#F6F0FC" class="key-main">Enter</text>
+    <text x="865.0" y="108.0" fill="#D9C4FF" class="key-sub">⏎</text>
+    <rect x="0" y="136" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#7E22CE" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="31.0" y="158.0" font-size="12" fill="#A855F7" class="key-main">Shift</text>
+    <text x="31.0" y="176.0" fill="#D9C4FF" class="key-sub">⇧</text>
+    <rect x="70" y="136" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#7E22CE" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="101.0" y="166.0" font-size="14" fill="#A855F7" class="key-main">^ O</text>
+    <rect x="140" y="136" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#7E22CE" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="171.0" y="166.0" font-size="14" fill="#A855F7" class="key-main">^ I</text>
+    <rect x="210" y="136" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="241.0" y="166.0" font-size="14" fill="#443b54" class="key-main">·</text>
+    <rect x="280" y="136" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="311.0" y="166.0" font-size="14" fill="#443b54" class="key-main">·</text>
+    <rect x="350" y="136" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="381.0" y="166.0" font-size="14" fill="#443b54" class="key-main">·</text>
+    <rect x="484" y="136" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="515.0" y="166.0" font-size="14" fill="#443b54" class="key-main">·</text>
+    <rect x="554" y="136" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="585.0" y="166.0" font-size="14" fill="#443b54" class="key-main">·</text>
+    <rect x="624" y="136" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="655.0" y="166.0" font-size="14" fill="#443b54" class="key-main">·</text>
+    <rect x="694" y="136" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="725.0" y="166.0" font-size="14" fill="#443b54" class="key-main">·</text>
+    <rect x="764" y="136" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#38BDF8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="795.0" y="158.0" font-size="14" fill="#38BDF8" class="key-main">:q</text>
+    <text x="795.0" y="176.0" fill="#D9C4FF" class="key-sub">Quit</text>
+    <rect x="834" y="136" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#7E22CE" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="865.0" y="158.0" font-size="12" fill="#A855F7" class="key-main">Shift</text>
+    <text x="865.0" y="176.0" fill="#D9C4FF" class="key-sub">⇧</text>
+    <rect x="210" y="212" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="241.0" y="242.0" font-size="14" fill="#443b54" class="key-main">▽</text>
+    <rect x="280" y="212" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#FF5CB8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="311.0" y="234.0" font-size="12" fill="#FF5CB8" class="key-main">CODE</text>
+    <text x="311.0" y="252.0" fill="#FF5CB8" class="key-sub">HOLD</text>
+    <rect x="350" y="212" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="381.0" y="242.0" font-size="14" fill="#443b54" class="key-main">▽</text>
+    <rect x="484" y="212" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="515.0" y="242.0" font-size="14" fill="#443b54" class="key-main">▽</text>
+    <rect x="554" y="212" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="585.0" y="242.0" font-size="14" fill="#443b54" class="key-main">▽</text>
+    <rect x="624" y="212" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="655.0" y="242.0" font-size="14" fill="#443b54" class="key-main">▽</text>
+  </g>
+</svg>
