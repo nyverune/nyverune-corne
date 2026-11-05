@@ -16,6 +16,5 @@ BACKLIGHT_ENABLE = no      # Custom backlighting
 RGBLIGHT_ENABLE = no       # RGB underglow (disabled by default to save firmware space)
 OLED_ENABLE = no           # OLED display support
 COMBO_ENABLE = yes         # Key chord / combo support
-TAP_DANCE_ENABLE = yes     # Tap-dance key support
+TAP_DANCE_ENABLE = no      # Disabled to avoid undeclared tap dance actions
 LTO_ENABLE = yes           # Link Time Optimization to reduce binary size
-

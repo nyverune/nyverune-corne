@@ -147,7 +147,7 @@
 | L12 | Left | Home Row | `ES_PIPE` | | (Pipe) |
 | L13 | Left | Home Row | `ES_LCBR` | { (Left Brace) |
 | L14 | Left | Home Row | `ES_RCBR` | } (Right Brace) |
-| L15 | Left | Home Row | `ES_GRAV` | GRAV |
+| L15 | Left | Home Row | `ES_GRV` | GRV |
 | R10 | Right | Home Row | `ES_PLUS` | + (Plus) |
 | R11 | Right | Home Row | `ES_MINS` | - (Hyphen) |
 | R12 | Right | Home Row | `ES_LBRC` | [ (Left Bracket) |

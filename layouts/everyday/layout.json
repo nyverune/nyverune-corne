@@ -35,7 +35,7 @@
       "description": "Clean, single-chord access to brackets, braces and programming characters without awkward AltGr combinations.",
       "keys": [
         "KC_TILD", "ES_EXCL", "ES_DQOT", "ES_HASH", "ES_DLLR", "ES_PERC", "ES_AMPR", "ES_SLSH", "ES_LPRN", "ES_RPRN", "ES_EQLS", "KC_DEL",
-        "KC_TRNS", "ES_BSLS", "ES_PIPE", "ES_LCBR", "ES_RCBR", "ES_GRAV", "ES_PLUS", "ES_MINS", "ES_LBRC", "ES_RBRC", "ES_ASTR", "ES_QUES",
+        "KC_TRNS", "ES_BSLS", "ES_PIPE", "ES_LCBR", "ES_RCBR", "ES_GRV", "ES_PLUS", "ES_MINS", "ES_LBRC", "ES_RBRC", "ES_ASTR", "ES_QUES",
         "KC_TRNS", "ES_LABK", "ES_RABK", "ES_ATSN", "ES_TILD", "ES_EURO", "ES_UNDS", "ES_COLN", "ES_SCLN", "ES_IQUE", "ES_IEXC", "KC_TRNS",
                                 "KC_TRNS", "KC_TRNS", "KC_TRNS",           "KC_TRNS", "KC_TRNS", "KC_TRNS"
       ]

@@ -41,3 +41,5 @@ combo_t key_combos[] = {
     [CB_MN_RPRN] = COMBO(mn_combo, ES_RPRN),
     [CB_DEL]     = COMBO(del_combo, KC_DEL)
 };
+
+uint16_t COMBO_LEN = sizeof(key_combos) / sizeof(key_combos[0]);

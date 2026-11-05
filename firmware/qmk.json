@@ -7,7 +7,7 @@
         "extrakey": true,
         "mousekey": false,
         "combo": true,
-        "tap_dance": true,
+        "tap_dance": false,
         "oled": false,
         "rgblight": false
     },

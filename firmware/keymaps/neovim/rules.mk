@@ -1,6 +1,5 @@
 # Rules for Neovim Keymap
 BOOTMAGIC_ENABLE = yes
 COMBO_ENABLE = yes
-TAP_DANCE_ENABLE = yes
+TAP_DANCE_ENABLE = no
 EXTRAKEY_ENABLE = yes
-

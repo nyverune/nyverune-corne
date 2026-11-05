@@ -17,12 +17,11 @@ enum nyverune_layers {
 };
 
 // Layer state bitmask shorthands
-#define LAYER_MASK_BASE    (1UL << _BASE)
-#define LAYER_MASK_NAV     (1UL << _NAV)
-#define LAYER_MASK_SYM     (1UL << _SYM)
-#define LAYER_MASK_NUM     (1UL << _NUM)
-#define LAYER_MASK_VIM_NAV (1UL << _VIM_NAV)
-#define LAYER_MASK_VIM_CODE(1UL << _VIM_CODE)
-#define LAYER_MASK_MEDIA   (1UL << _MEDIA)
-#define LAYER_MASK_ADJUST  (1UL << _ADJUST)
-
+#define LAYER_MASK_BASE     (1UL << _BASE)
+#define LAYER_MASK_NAV      (1UL << _NAV)
+#define LAYER_MASK_SYM      (1UL << _SYM)
+#define LAYER_MASK_NUM      (1UL << _NUM)
+#define LAYER_MASK_VIM_NAV  (1UL << _VIM_NAV)
+#define LAYER_MASK_VIM_CODE (1UL << _VIM_CODE)
+#define LAYER_MASK_MEDIA    (1UL << _MEDIA)
+#define LAYER_MASK_ADJUST   (1UL << _ADJUST)

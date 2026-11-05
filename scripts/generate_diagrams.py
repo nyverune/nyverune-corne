@@ -143,6 +143,7 @@ def parse_key_labels(key_code: str) -> tuple[str, str]:
         "RALT": ("AltGr", ""),
         "NTIL": ("Ñ", ""),
         "ACUT": ("´", "¨"),
+        "GRV": ("`", "^"),
         "CCED": ("Ç", ""),
         "COMM": (",", ";"),
         "DOT": (".", ":"),
