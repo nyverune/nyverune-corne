@@ -60,3 +60,4 @@ Eliminates the major pain point of Spanish ISO layouts where brackets and braces
 - Native HJKL motion on the home row.
 - Dedicated window splitting (`<C-w>v`, `<C-w>s`) and buffer navigation (`:bnext`, `:bprev`).
 - Code intelligence actions (`gd` definition, `gr` references, `[d` / `]d` diagnostics, hover docs, code actions).
+

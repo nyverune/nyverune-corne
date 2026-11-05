@@ -16,3 +16,4 @@ The official visual identity of Nyverune Corne layouts and documentation adheres
 | **Warning** | `#F59E0B` | `245, 158, 11` | `38°, 92%, 50%` | Advertencias de compilador, avisos |
 | **Danger** | `#EF4444` | `239, 68, 68`  | `0°, 84%, 60%`  | Reset, Bootloader, fallos críticos |
 | **Info** | `#38BDF8` | `56, 189, 248` | `198°, 93%, 60%`| Teclas de navegación, telemetría |
+

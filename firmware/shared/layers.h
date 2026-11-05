@@ -25,3 +25,4 @@ enum nyverune_layers {
 #define LAYER_MASK_VIM_CODE(1UL << _VIM_CODE)
 #define LAYER_MASK_MEDIA   (1UL << _MEDIA)
 #define LAYER_MASK_ADJUST  (1UL << _ADJUST)
+

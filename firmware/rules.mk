@@ -18,3 +18,4 @@ OLED_ENABLE = no           # OLED display support
 COMBO_ENABLE = yes         # Key chord / combo support
 TAP_DANCE_ENABLE = yes     # Tap-dance key support
 LTO_ENABLE = yes           # Link Time Optimization to reduce binary size
+

@@ -38,3 +38,4 @@ Standard Spanish QWERTY keyboards require heavy use of `AltGr` for brackets, bra
 - **Left Thumb Cluster:** Dedicated to system commands (`Super`), numeric/lower layer access (`_NUM`), and Space.
 - **Right Thumb Cluster:** Dedicated to confirmation (`Enter`), navigation/raise layer access (`_NAV`), and `AltGr`.
 - This ensures balanced hand load: the left hand controls layer shift for numbers, while the right hand enters the numbers; the right hand controls layer shift for navigation, while the left hand triggers editing chords.
+

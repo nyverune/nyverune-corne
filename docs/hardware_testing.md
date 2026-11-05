@@ -64,3 +64,4 @@ In Neovim:
 - [ ] From Base, press Right Center Thumb + `H/J/K/L` to move cursor smoothly.
 - [ ] Test `<C-w>v` and `<C-w>s` splits via Vim Nav layer.
 - [ ] Test `:w<CR>` quick save keycode.
+

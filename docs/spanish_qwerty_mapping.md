@@ -30,3 +30,4 @@ To overcome standard Spanish ISO layout friction in coding and Neovim:
 - `{` and `}` are grouped symmetrically for rapid block scoping.
 - `\` and `/` are positioned on primary thumb/row extensions.
 - `~` (tilde) and `|` (pipe) are single-tap symbols on the Symbol layer.
+

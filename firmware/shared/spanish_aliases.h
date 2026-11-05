@@ -85,3 +85,4 @@
 #define ES_RBRC ALGR(ES_PLUS) // ]  (AltGr + +)
 #define ES_LCBR ALGR(ES_ACUT) // {  (or AltGr + ')
 #define ES_RCBR ALGR(ES_CCED) // }  (AltGr + ç)
+

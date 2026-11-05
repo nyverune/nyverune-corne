@@ -8,3 +8,4 @@ Documentation, setup instructions, hardware guides, and design decisions for Nyv
 - `neovim_layout.md` - Full documentation for the Neovim profile.
 - `hardware_testing.md` - Verification procedures and test checklist on physical Corne hardware.
 - `compilation_and_flashing.md` - Firmware build, flashing, and bootloader guides.
+

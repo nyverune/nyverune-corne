@@ -27,3 +27,4 @@
     \
     /* Thumb cluster: [Left GUI, Lower, Space] [Enter, Raise, AltGr] */ \
     KC_LGUI, MO(_NUM), KC_SPC,   KC_ENT, MO(_NAV), KC_RALT
+

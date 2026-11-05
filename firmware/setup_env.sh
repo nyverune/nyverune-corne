@@ -43,3 +43,4 @@ echo ""
 echo "Setup complete! You can now compile using:"
 echo "  qmk compile -kb crkbd/rev1 -km nyverune_everyday"
 echo "  qmk compile -kb crkbd/rev1 -km nyverune_neovim"
+

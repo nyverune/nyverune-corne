@@ -84,3 +84,4 @@ The thumb keys are the most accessible keys on a split ergonomic keyboard. To av
 ## 6. Declarative JSON Schema
 
 All layouts are authored or generated as declarative JSON files under `layouts/<profile>/layout.json` to empower automatic diagram rendering and documentation generation tools.
+
