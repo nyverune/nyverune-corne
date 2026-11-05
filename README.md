@@ -25,7 +25,7 @@ nyverune-corne/
 │   ├── everyday/      # Everyday profile definitions
 │   └── neovim/        # Neovim profile definitions
 ├── firmware/          # QMK source files, rules, and keymaps
-│   ├── shared/        # Shared QMK headers and Spanish keycodes
+│   ├── shared/        # Shared QMK headers, combos, and Spanish keycodes
 │   └── keymaps/       # Profile-specific QMK keymaps
 │       ├── everyday/  # Everyday keymap (keymap.c, rules.mk, config.h)
 │       └── neovim/    # Neovim keymap (keymap.c, rules.mk, config.h)
@@ -47,12 +47,12 @@ nyverune-corne/
   - [x] Define the shared primary layer.
   - [x] Establish the Spanish QWERTY keymap.
   - [x] Define conventions for layout and layer organization.
-- [ ] **Milestone 2 — Initial Layouts**
-  - [ ] Implement the Everyday layout.
-  - [ ] Implement the Neovim layout.
-  - [ ] Design and configure specialized secondary layers.
-  - [ ] Test both layouts on the Corne keyboard.
-  - [ ] Refine mappings based on practical usage.
+- [x] **Milestone 2 — Initial Layouts**
+  - [x] Implement the Everyday layout.
+  - [x] Implement the Neovim layout.
+  - [x] Design and configure specialized secondary layers.
+  - [x] Test both layouts on the Corne keyboard.
+  - [x] Refine mappings based on practical usage.
 - [ ] **Milestone 3 — Documentation and Diagrams**
   - [ ] Establish a diagram generation workflow.
   - [ ] Generate visual representations of each layout.
