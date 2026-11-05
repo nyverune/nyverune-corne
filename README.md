@@ -43,10 +43,10 @@ nyverune-corne/
 
 - [x] **Milestone 1 — Project Foundation**
   - [x] Establish the repository structure.
-  - [ ] Configure the QMK development environment.
-  - [ ] Define the shared primary layer.
-  - [ ] Establish the Spanish QWERTY keymap.
-  - [ ] Define conventions for layout and layer organization.
+  - [x] Configure the QMK development environment.
+  - [x] Define the shared primary layer.
+  - [x] Establish the Spanish QWERTY keymap.
+  - [x] Define conventions for layout and layer organization.
 - [ ] **Milestone 2 — Initial Layouts**
   - [ ] Implement the Everyday layout.
   - [ ] Implement the Neovim layout.
