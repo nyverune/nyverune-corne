@@ -2,6 +2,7 @@
 #include "../../shared/layers.h"
 #include "../../shared/spanish_aliases.h"
 #include "../../shared/shared_base.h"
+#include "../../shared/combos.h"
 
 /*
  * Custom Neovim Keycodes and Macros
