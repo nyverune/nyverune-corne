@@ -1,0 +1,62 @@
+{
+  "layer_id": 0,
+  "layer_name": "BASE",
+  "display_name": "Spanish QWERTY Base",
+  "description": "Consistent primary typing layer across all Nyverune Corne profiles with native Spanish characters (including Ñ).",
+  "matrix": {
+    "rows": 4,
+    "cols": 12,
+    "total_keys": 42
+  },
+  "keys": [
+    {"pos": [0, 0], "hand": "left",  "row": 0, "col": 0, "code": "KC_TAB",        "label": "Tab",       "type": "control"},
+    {"pos": [0, 1], "hand": "left",  "row": 0, "col": 1, "code": "ES_Q",          "label": "Q",         "type": "alpha"},
+    {"pos": [0, 2], "hand": "left",  "row": 0, "col": 2, "code": "ES_W",          "label": "W",         "type": "alpha"},
+    {"pos": [0, 3], "hand": "left",  "row": 0, "col": 3, "code": "ES_E",          "label": "E",         "type": "alpha"},
+    {"pos": [0, 4], "hand": "left",  "row": 0, "col": 4, "code": "ES_R",          "label": "R",         "type": "alpha"},
+    {"pos": [0, 5], "hand": "left",  "row": 0, "col": 5, "code": "ES_T",          "label": "T",         "type": "alpha"},
+
+    {"pos": [0, 6], "hand": "right", "row": 0, "col": 6, "code": "ES_Y",          "label": "Y",         "type": "alpha"},
+    {"pos": [0, 7], "hand": "right", "row": 0, "col": 7, "code": "ES_U",          "label": "U",         "type": "alpha"},
+    {"pos": [0, 8], "hand": "right", "row": 0, "col": 8, "code": "ES_I",          "label": "I",         "type": "alpha"},
+    {"pos": [0, 9], "hand": "right", "row": 0, "col": 9, "code": "ES_O",          "label": "O",         "type": "alpha"},
+    {"pos": [0, 10],"hand": "right", "row": 0, "col": 10,"code": "ES_P",          "label": "P",         "type": "alpha"},
+    {"pos": [0, 11],"hand": "right", "row": 0, "col": 11,"code": "KC_BSPC",       "label": "Backspace", "type": "control"},
+
+    {"pos": [1, 0], "hand": "left",  "row": 1, "col": 0, "code": "LCTL_T(KC_ESC)","label": "Esc / Ctrl", "type": "mod_tap"},
+    {"pos": [1, 1], "hand": "left",  "row": 1, "col": 1, "code": "ES_A",          "label": "A",         "type": "alpha"},
+    {"pos": [1, 2], "hand": "left",  "row": 1, "col": 2, "code": "ES_S",          "label": "S",         "type": "alpha"},
+    {"pos": [1, 3], "hand": "left",  "row": 1, "col": 3, "code": "ES_D",          "label": "D",         "type": "alpha"},
+    {"pos": [1, 4], "hand": "left",  "row": 1, "col": 4, "code": "ES_F",          "label": "F",         "type": "alpha"},
+    {"pos": [1, 5], "hand": "left",  "row": 1, "col": 5, "code": "ES_G",          "label": "G",         "type": "alpha"},
+
+    {"pos": [1, 6], "hand": "right", "row": 1, "col": 6, "code": "ES_H",          "label": "H",         "type": "alpha"},
+    {"pos": [1, 7], "hand": "right", "row": 1, "col": 7, "code": "ES_J",          "label": "J",         "type": "alpha"},
+    {"pos": [1, 8], "hand": "right", "row": 1, "col": 8, "code": "ES_K",          "label": "K",         "type": "alpha"},
+    {"pos": [1, 9], "hand": "right", "row": 1, "col": 9, "code": "ES_L",          "label": "L",         "type": "alpha"},
+    {"pos": [1, 10],"hand": "right", "row": 1, "col": 10,"code": "ES_NTIL",       "label": "Ñ",         "type": "alpha"},
+    {"pos": [1, 11],"hand": "right", "row": 1, "col": 11,"code": "ES_ACUT",       "label": "´ / ¨",     "type": "deadkey"},
+
+    {"pos": [2, 0], "hand": "left",  "row": 2, "col": 0, "code": "KC_LSFT",       "label": "Shift",     "type": "modifier"},
+    {"pos": [2, 1], "hand": "left",  "row": 2, "col": 1, "code": "ES_Z",          "label": "Z",         "type": "alpha"},
+    {"pos": [2, 2], "hand": "left",  "row": 2, "col": 2, "code": "ES_X",          "label": "X",         "type": "alpha"},
+    {"pos": [2, 3], "hand": "left",  "row": 2, "col": 3, "code": "ES_C",          "label": "C",         "type": "alpha"},
+    {"pos": [2, 4], "hand": "left",  "row": 2, "col": 4, "code": "ES_V",          "label": "V",         "type": "alpha"},
+    {"pos": [2, 5], "hand": "left",  "row": 2, "col": 5, "code": "ES_B",          "label": "B",         "type": "alpha"},
+
+    {"pos": [2, 6], "hand": "right", "row": 2, "col": 6, "code": "ES_N",          "label": "N",         "type": "alpha"},
+    {"pos": [2, 7], "hand": "right", "row": 2, "col": 7, "code": "ES_M",          "label": "M",         "type": "alpha"},
+    {"pos": [2, 8], "hand": "right", "row": 2, "col": 8, "code": "ES_COMM",       "label": ",",         "type": "punctuation"},
+    {"pos": [2, 9], "hand": "right", "row": 2, "col": 9, "code": "ES_DOT",        "label": ".",         "type": "punctuation"},
+    {"pos": [2, 10],"hand": "right", "row": 2, "col": 10,"code": "ES_MINS",       "label": "-",         "type": "punctuation"},
+    {"pos": [2, 11],"hand": "right", "row": 2, "col": 11,"code": "KC_RSFT",       "label": "Shift",     "type": "modifier"},
+
+    {"pos": [3, 3], "hand": "left",  "row": 3, "col": 3, "code": "KC_LGUI",       "label": "Super",     "type": "thumb"},
+    {"pos": [3, 4], "hand": "left",  "row": 3, "col": 4, "code": "MO(_LOWER)",    "label": "Lower / Num","type": "thumb_layer"},
+    {"pos": [3, 5], "hand": "left",  "row": 3, "col": 5, "code": "KC_SPC",        "label": "Space",     "type": "thumb"},
+
+    {"pos": [3, 6], "hand": "right", "row": 3, "col": 6, "code": "KC_ENT",        "label": "Enter",     "type": "thumb"},
+    {"pos": [3, 7], "hand": "right", "row": 3, "col": 7, "code": "MO(_RAISE)",    "label": "Raise / Nav","type": "thumb_layer"},
+    {"pos": [3, 8], "hand": "right", "row": 3, "col": 8, "code": "KC_RALT",       "label": "AltGr",     "type": "thumb"}
+  ]
+}
