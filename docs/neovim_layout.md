@@ -186,16 +186,16 @@
 | Position | Hand | Row | QMK Keycode | Primary Function |
 |---|---|---|---|---|
 | L00 | Left | Top Row | `KC_TILD` | ~ (Tilde) |
-| L01 | Left | Top Row | `ES_EXCL` | ! (Exclamation) |
-| L02 | Left | Top Row | `ES_DQOT` | " (Quote) |
+| L01 | Left | Top Row | `ES_EXLM` | EXLM |
+| L02 | Left | Top Row | `ES_DQUO` | DQUO |
 | L03 | Left | Top Row | `ES_HASH` | # (Hash) |
-| L04 | Left | Top Row | `ES_DLLR` | $ (Dollar) |
+| L04 | Left | Top Row | `ES_DLR` | DLR |
 | L05 | Left | Top Row | `ES_PERC` | % (Percent) |
 | R00 | Right | Top Row | `ES_AMPR` | & (Ampersand) |
 | R01 | Right | Top Row | `ES_SLSH` | / (Slash) |
 | R02 | Right | Top Row | `ES_LPRN` | ( (Left Paren) |
 | R03 | Right | Top Row | `ES_RPRN` | ) (Right Paren) |
-| R04 | Right | Top Row | `ES_EQLS` | = (Equals) |
+| R04 | Right | Top Row | `ES_EQL` | EQL |
 | R05 | Right | Top Row | `KC_DEL` | Delete (Del) |
 | L10 | Left | Home Row | `KC_TRNS` | ▽ (Transparent) |
 | L11 | Left | Home Row | `ES_BSLS` | \ (Backslash) |

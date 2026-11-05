@@ -6,10 +6,26 @@
 /*
  * QMK Spanish QWERTY Keycode definitions and ergonomic aliases.
  * Assumes the host OS input source is set to Spanish (Spain / ISO).
- * Uses native QMK keymap_spanish.h keycodes directly without redefinition.
+ * Bridges shorthand aliases to QMK's native keymap_spanish.h definitions.
  */
 
 // Shorthand aliases & compatibility bridges for Nyverune keymaps
+#ifndef ES_EXCL
+#define ES_EXCL ES_EXLM
+#endif
+
+#ifndef ES_DQOT
+#define ES_DQOT ES_DQUO
+#endif
+
+#ifndef ES_DLLR
+#define ES_DLLR ES_DLR
+#endif
+
+#ifndef ES_EQLS
+#define ES_EQLS ES_EQL
+#endif
+
 #ifndef ES_GRAV
 #define ES_GRAV ES_GRV
 #endif
