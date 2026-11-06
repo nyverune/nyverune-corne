@@ -6,8 +6,7 @@
  */
 
 // Split keyboard master detection
-#define EE_HANDS
-#define USE_SERIAL
+#define MASTER_LEFT
 
 // Refined ergonomic tapping timing settings
 #define TAPPING_TERM 185
