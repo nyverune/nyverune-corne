@@ -9,13 +9,15 @@ The project maintains reproducible, documented, and version-controlled configura
 | Component | Selection |
 |---|---|
 | Keyboard | Corne (crkbd) 3x6+3 (42 keys) |
+| Microcontroller | RP2040 / ATmega32U4 (`CONVERT_TO=rp2040_ce`) |
 | Firmware | QMK Firmware |
 | Base layout | Spanish QWERTY (native `Ñ` and punctuation) |
 | Primary layer | Shared across all profiles |
 | Secondary layers | Profile-specific (Everyday, Neovim) |
 | Visual Diagrams | Vector SVG & ASCII generated with official Nyverune palette |
-| Documentation | Automated Markdown & SVG diagrams |
-| Target environments | Linux (Arch Linux) and Windows |
+| OLED Display | 128x32 SSD1306 custom pixel-art Nyverune logo & keylogger |
+| Profile Switching | Runtime Raw HID (<1ms) & Hardware hotkey switching |
+| Target environments | Linux (Arch Linux / Hyprland) and Windows |
 
 ## Color Palette
 
@@ -45,7 +47,7 @@ nyverune-corne/
 │   ├── everyday/      # Everyday profile definitions
 │   └── neovim/        # Neovim profile definitions
 ├── firmware/          # QMK source files, rules, and keymaps
-│   ├── shared/        # Shared QMK headers, combos, and Spanish keycodes
+│   ├── shared/        # Shared QMK headers, combos, OLED logo, and Spanish keycodes
 │   └── keymaps/       # Profile-specific QMK keymaps
 │       ├── everyday/  # Everyday keymap (keymap.c, rules.mk, config.h)
 │       └── neovim/    # Neovim keymap (keymap.c, rules.mk, config.h)
@@ -53,7 +55,7 @@ nyverune-corne/
 │   ├── everyday/      # Everyday profile SVG layers
 │   └── neovim/        # Neovim profile SVG layers
 ├── docs/              # Comprehensive design, layer, and flashing documentation
-└── scripts/           # Validation, diagram, and documentation generation utilities
+└── scripts/           # Validation, diagram, desktop daemons, and widget utilities
 ```
 
 ## Profiles
@@ -85,8 +87,9 @@ nyverune-corne/
   - [x] Implement automatic documentation generation.
   - [x] Document layers, key mappings, and design decisions.
   - [x] Document firmware compilation and flashing.
-- [ ] **Milestone 4 — Profile Management Exploration**
-  - [ ] Investigate runtime profile switching mechanisms in QMK.
-  - [ ] Evaluate switching profiles without reflashing firmware.
-  - [ ] Explore custom scripts and desktop integration for Arch Linux.
-  - [ ] Investigate equivalent tooling for Windows.
+- [x] **Milestone 4 — Profile Management Exploration**
+  - [x] Investigate runtime profile switching mechanisms in QMK.
+  - [x] Evaluate switching profiles without reflashing firmware.
+  - [x] Explore custom scripts and desktop integration for Arch Linux (Hyprland IPC / Lua).
+  - [x] Investigate equivalent tooling for Windows (Win32 active window watcher).
+  - [x] Evaluate the feasibility of custom desktop widgets for profile switching (Waybar & Rofi).

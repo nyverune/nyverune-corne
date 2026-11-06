@@ -1,0 +1,10 @@
+{
+  "custom/nyverune": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 2,
+    "exec": "~/nyverune/nyverune-corne/scripts/waybar_profile.sh",
+    "on-click": "~/nyverune/nyverune-corne/scripts/nyverune_switch.py toggle; pkill -RTMIN+8 waybar",
+    "signal": 8
+  }
+}
