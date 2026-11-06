@@ -28,8 +28,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         /* Left Thumbs: Super, Lower (Num), Space */
         KC_LGUI, MO(_NUM), KC_SPC,
-        /* Right Thumbs: Enter, Raise (Nav), AltGr */
-        KC_ENT, MO(_NAV), KC_RALT
+        /* Right Thumbs: Enter (Hold: Ctrl), Raise (Nav), AltGr */
+        RCTL_T(KC_ENT), MO(_NAV), KC_RALT
     ),
 
     [_NAV] = LAYOUT_split_3x6_3(

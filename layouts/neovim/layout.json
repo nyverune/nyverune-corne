@@ -13,7 +13,7 @@
         "KC_TAB", "ES_Q", "ES_W", "ES_E", "ES_R", "ES_T",         "ES_Y", "ES_U", "ES_I", "ES_O", "ES_P", "KC_BSPC",
         "LCTL_T(KC_ESC)", "ES_A", "ES_S", "ES_D", "ES_F", "ES_G", "ES_H", "ES_J", "ES_K", "ES_L", "ES_NTIL", "ES_ACUT",
         "KC_LSFT", "ES_Z", "ES_X", "ES_C", "ES_V", "ES_B",         "ES_N", "ES_M", "ES_COMM", "ES_DOT", "ES_MINS", "KC_RSFT",
-                            "KC_LGUI", "MO(3)", "KC_SPC",           "KC_ENT", "MO(4)", "KC_RALT"
+                            "KC_LGUI", "MO(3)", "KC_SPC",           "RCTL_T(KC_ENT)", "MO(4)", "KC_RALT"
       ]
     },
     {
@@ -22,9 +22,9 @@
       "title": "Neovim Navigation & Splits",
       "description": "HJKL cursor keys, window splits, buffer cycling, jump lists and Neovim scrolling.",
       "keys": [
-        "KC_ESC",  "VIM_BPREV", "LCTL(KC_U)", "LCTL(KC_D)", "VIM_BNEXT", "KC_NO",    "KC_HOME", "KC_PGDN", "KC_PGUP", "KC_END",  "VIM_SAVE", "KC_BSPC",
-        "KC_TRNS", "LCTL(KC_W)", "VIM_HSPLIT", "VIM_VSPLIT", "KC_TAB",   "KC_ESC",   "KC_LEFT", "KC_DOWN", "KC_UP",   "KC_RGHT", "KC_COLN", "KC_ENT",
-        "KC_LSFT", "LCTL(KC_O)", "LCTL(KC_I)", "KC_NO",      "KC_NO",     "KC_NO",    "KC_NO",   "KC_NO",   "KC_NO",   "KC_NO",   "VIM_QUIT", "KC_RSFT",
+        "KC_ESC",  "VIM_BPREV", "LCTL(KC_U)", "LCTL(KC_D)", "VIM_BNEXT", "LCTL(KC_T)",    "KC_HOME", "KC_PGDN", "KC_PGUP", "KC_END",  "VIM_SAVE", "KC_BSPC",
+        "KC_TRNS", "LCTL(KC_A)", "VIM_HSPLIT", "VIM_VSPLIT", "KC_TAB",   "LCTL(KC_W)",   "KC_LEFT", "KC_DOWN", "KC_UP",   "KC_RGHT", "KC_COLN", "KC_ENT",
+        "KC_LSFT", "LCTL(KC_Z)", "LCTL(KC_X)", "LCTL(KC_C)", "LCTL(KC_V)", "LCTL(KC_Y)", "LCTL(KC_O)", "LCTL(KC_I)", "KC_NO", "KC_NO", "VIM_QUIT", "KC_RSFT",
                                  "KC_TRNS", "MO(5)", "KC_TRNS",                      "KC_TRNS", "KC_TRNS", "KC_TRNS"
       ]
     },

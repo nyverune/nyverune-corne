@@ -59,7 +59,7 @@
 | LT0 | Left | Thumb (Outer Thumb) | `KC_LGUI` | Super / Windows (◆) |
 | LT1 | Left | Thumb (Center Thumb) | `MO(3)` | Momentary Layer Num |
 | LT2 | Left | Thumb (Inner Thumb) | `KC_SPC` | Space (␣) |
-| RT0 | Right | Thumb (Inner Thumb) | `KC_ENT` | Enter (⏎) |
+| RT0 | Right | Thumb (Inner Thumb) | `RCTL_T(KC_ENT)` | RCTL_T(ENT) |
 | RT1 | Right | Thumb (Center Thumb) | `MO(1)` | Momentary Layer Nav |
 | RT2 | Right | Thumb (Outer Thumb) | `KC_RALT` | AltGr (ISO) |
 

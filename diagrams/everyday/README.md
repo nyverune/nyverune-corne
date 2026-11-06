@@ -10,7 +10,7 @@
 [  Tab  ] [   Q   ] [   W   ] [   E   ] [   R   ] [   T   ]    [   Y   ] [   U   ] [   I   ] [   O   ] [   P   ] [ Bksp  ]
 [  Esc  ] [   A   ] [   S   ] [   D   ] [   F   ] [   G   ]    [   H   ] [   J   ] [   K   ] [   L   ] [   Ñ   ] [   ´   ]
 [ Shift ] [   Z   ] [   X   ] [   C   ] [   V   ] [   B   ]    [   N   ] [   M   ] [   ,   ] [   .   ] [   -   ] [ Shift ]
-                              [ Super ] [  NUM  ] [ Space ]    [ Enter ] [  NAV  ] [ AltGr ]
+                              [ Super ] [  NUM  ] [ Space ]    [  Ent  ] [  NAV  ] [ AltGr ]
 ```
 
 ## Layer 1: NAV

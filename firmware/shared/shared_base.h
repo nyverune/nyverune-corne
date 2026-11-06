@@ -25,6 +25,6 @@
     /* Right hand bottom row */ \
     ES_N, ES_M, ES_COMM, ES_DOT, ES_MINS, KC_RSFT, \
     \
-    /* Thumb cluster: [Left GUI, Lower, Space] [Enter, Raise, AltGr] */ \
-    KC_LGUI, MO(_NUM), KC_SPC,   KC_ENT, MO(_NAV), KC_RALT
+    /* Thumb cluster: [Left GUI, Lower, Space] [Enter (Ctrl), Raise, AltGr] */ \
+    KC_LGUI, MO(_NUM), KC_SPC,   RCTL_T(KC_ENT), MO(_NAV), KC_RALT
 

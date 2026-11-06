@@ -59,7 +59,7 @@
 | LT0 | Left | Thumb (Outer Thumb) | `KC_LGUI` | Super / Windows (◆) |
 | LT1 | Left | Thumb (Center Thumb) | `MO(3)` | Momentary Layer Num |
 | LT2 | Left | Thumb (Inner Thumb) | `KC_SPC` | Space (␣) |
-| RT0 | Right | Thumb (Inner Thumb) | `KC_ENT` | Enter (⏎) |
+| RT0 | Right | Thumb (Inner Thumb) | `RCTL_T(KC_ENT)` | RCTL_T(ENT) |
 | RT1 | Right | Thumb (Center Thumb) | `MO(4)` | Momentary Layer VimNav |
 | RT2 | Right | Thumb (Outer Thumb) | `KC_RALT` | AltGr (ISO) |
 
@@ -80,7 +80,7 @@
 | L02 | Left | Top Row | `LCTL(KC_U)` | Ctrl + U |
 | L03 | Left | Top Row | `LCTL(KC_D)` | Ctrl + D |
 | L04 | Left | Top Row | `VIM_BNEXT` | Next Buffer (:bnext<CR>) |
-| L05 | Left | Top Row | `KC_NO` | · (No Key) |
+| L05 | Left | Top Row | `LCTL(KC_T)` | Ctrl + T |
 | R00 | Right | Top Row | `KC_HOME` | HOME |
 | R01 | Right | Top Row | `KC_PGDN` | PGDN |
 | R02 | Right | Top Row | `KC_PGUP` | PGUP |
@@ -88,11 +88,11 @@
 | R04 | Right | Top Row | `VIM_SAVE` | Save Buffer (:w<CR>) |
 | R05 | Right | Top Row | `KC_BSPC` | Backspace (⌫) |
 | L10 | Left | Home Row | `KC_TRNS` | ▽ (Transparent) |
-| L11 | Left | Home Row | `LCTL(KC_W)` | Ctrl + W |
+| L11 | Left | Home Row | `LCTL(KC_A)` | Ctrl + A |
 | L12 | Left | Home Row | `VIM_HSPLIT` | Horizontal Split (<C-w>s) |
 | L13 | Left | Home Row | `VIM_VSPLIT` | Vertical Split (<C-w>v) |
 | L14 | Left | Home Row | `KC_TAB` | Tab (⇥) |
-| L15 | Left | Home Row | `KC_ESC` | Escape (Esc) |
+| L15 | Left | Home Row | `LCTL(KC_W)` | Ctrl + W |
 | R10 | Right | Home Row | `KC_LEFT` | LEFT |
 | R11 | Right | Home Row | `KC_DOWN` | DOWN |
 | R12 | Right | Home Row | `KC_UP` | UP |
@@ -100,13 +100,13 @@
 | R14 | Right | Home Row | `KC_COLN` | : (Colon) |
 | R15 | Right | Home Row | `KC_ENT` | Enter (⏎) |
 | L20 | Left | Bottom Row | `KC_LSFT` | Left Shift |
-| L21 | Left | Bottom Row | `LCTL(KC_O)` | Ctrl + O |
-| L22 | Left | Bottom Row | `LCTL(KC_I)` | Ctrl + I |
-| L23 | Left | Bottom Row | `KC_NO` | · (No Key) |
-| L24 | Left | Bottom Row | `KC_NO` | · (No Key) |
-| L25 | Left | Bottom Row | `KC_NO` | · (No Key) |
-| R20 | Right | Bottom Row | `KC_NO` | · (No Key) |
-| R21 | Right | Bottom Row | `KC_NO` | · (No Key) |
+| L21 | Left | Bottom Row | `LCTL(KC_Z)` | Ctrl + Z |
+| L22 | Left | Bottom Row | `LCTL(KC_X)` | Ctrl + X |
+| L23 | Left | Bottom Row | `LCTL(KC_C)` | Ctrl + C |
+| L24 | Left | Bottom Row | `LCTL(KC_V)` | Ctrl + V |
+| L25 | Left | Bottom Row | `LCTL(KC_Y)` | Ctrl + Y |
+| R20 | Right | Bottom Row | `LCTL(KC_O)` | Ctrl + O |
+| R21 | Right | Bottom Row | `LCTL(KC_I)` | Ctrl + I |
 | R22 | Right | Bottom Row | `KC_NO` | · (No Key) |
 | R23 | Right | Bottom Row | `KC_NO` | · (No Key) |
 | R24 | Right | Bottom Row | `VIM_QUIT` | Quit (:q<CR>) |

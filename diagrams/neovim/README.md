@@ -10,7 +10,7 @@
 [  Tab  ] [   Q   ] [   W   ] [   E   ] [   R   ] [   T   ]    [   Y   ] [   U   ] [   I   ] [   O   ] [   P   ] [ Bksp  ]
 [  Esc  ] [   A   ] [   S   ] [   D   ] [   F   ] [   G   ]    [   H   ] [   J   ] [   K   ] [   L   ] [   Ñ   ] [   ´   ]
 [ Shift ] [   Z   ] [   X   ] [   C   ] [   V   ] [   B   ]    [   N   ] [   M   ] [   ,   ] [   .   ] [   -   ] [ Shift ]
-                              [ Super ] [  NUM  ] [ Space ]    [ Enter ] [  VIM  ] [ AltGr ]
+                              [ Super ] [  NUM  ] [ Space ]    [  Ent  ] [  VIM  ] [ AltGr ]
 ```
 
 ## Layer 4: VIM_NAV
@@ -20,9 +20,9 @@
 ### Layer 4: VIM_NAV (Neovim Navigation & Splits)
 
 ```
-[  Esc  ] [:bprev ] [  ^ U  ] [  ^ D  ] [:bnext ] [   ·   ]    [ Home  ] [ PgDn  ] [ PgUp  ] [  End  ] [  :w   ] [ Bksp  ]
-[   ▽   ] [  ^ W  ] [ split ] [vsplit ] [  Tab  ] [  Esc  ]    [ Left  ] [ Down  ] [  Up   ] [ Right ] [   :   ] [ Enter ]
-[ Shift ] [  ^ O  ] [  ^ I  ] [   ·   ] [   ·   ] [   ·   ]    [   ·   ] [   ·   ] [   ·   ] [   ·   ] [  :q   ] [ Shift ]
+[  Esc  ] [:bprev ] [  ^ U  ] [  ^ D  ] [:bnext ] [  ^ T  ]    [ Home  ] [ PgDn  ] [ PgUp  ] [  End  ] [  :w   ] [ Bksp  ]
+[   ▽   ] [  ^ A  ] [ split ] [vsplit ] [  Tab  ] [  ^ W  ]    [ Left  ] [ Down  ] [  Up   ] [ Right ] [   :   ] [ Enter ]
+[ Shift ] [  ^ Z  ] [  ^ X  ] [  ^ C  ] [  ^ V  ] [  ^ Y  ]    [  ^ O  ] [  ^ I  ] [   ·   ] [   ·   ] [  :q   ] [ Shift ]
                               [   ▽   ] [ CODE  ] [   ▽   ]    [   ▽   ] [   ▽   ] [   ▽   ]
 ```
 

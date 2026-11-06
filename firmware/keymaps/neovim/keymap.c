@@ -42,19 +42,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         /* Left Thumbs: Super, Lower (Num), Space */
         KC_LGUI, MO(_NUM), KC_SPC,
-        /* Right Thumbs: Enter, Raise (Vim Nav), AltGr */
-        KC_ENT, MO(_VIM_NAV), KC_RALT
+        /* Right Thumbs: Enter (Hold: Ctrl), Raise (Vim Nav), AltGr */
+        RCTL_T(KC_ENT), MO(_VIM_NAV), KC_RALT
     ),
 
     [_VIM_NAV] = LAYOUT_split_3x6_3(
-        KC_ESC,  VIM_BPREV,    LCTL(KC_U),  LCTL(KC_D),  VIM_BNEXT,   KC_NO,
+        KC_ESC,  VIM_BPREV,    LCTL(KC_U),  LCTL(KC_D),  VIM_BNEXT,   LCTL(KC_T),
         KC_HOME, KC_PGDN,      KC_PGUP,     KC_END,      VIM_SAVE,    KC_BSPC,
 
-        KC_TRNS, LCTL(KC_W),   VIM_HSPLIT,  VIM_VSPLIT,  KC_TAB,      KC_ESC,
+        KC_TRNS, LCTL(KC_A),   VIM_HSPLIT,  VIM_VSPLIT,  KC_TAB,      LCTL(KC_W),
         KC_LEFT, KC_DOWN,      KC_UP,       KC_RGHT,     ES_COLN,     KC_ENT,
 
-        KC_LSFT, LCTL(KC_O),   LCTL(KC_I),  KC_NO,       KC_NO,       KC_NO,
-        KC_NO,   KC_NO,        KC_NO,       KC_NO,       VIM_QUIT,    KC_RSFT,
+        KC_LSFT, LCTL(KC_Z),   LCTL(KC_X),  LCTL(KC_C),  LCTL(KC_V),  LCTL(KC_Y),
+        LCTL(KC_O), LCTL(KC_I), KC_NO,      KC_NO,       VIM_QUIT,    KC_RSFT,
 
         KC_TRNS, MO(_VIM_CODE), KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS

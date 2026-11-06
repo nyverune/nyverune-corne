@@ -95,7 +95,7 @@ def parse_key_labels(key_code: str) -> tuple[str, str]:
     clean = key_code.replace("KC_", "").replace("ES_", "")
 
     # Dual-role Mod-Tap keys
-    if key_code.startswith("LCTL_T("):
+    if key_code.startswith("LCTL_T(") or key_code.startswith("RCTL_T("):
         inner = key_code[7:-1].replace("KC_", "")
         return (inner.capitalize(), "Ctrl")
     if key_code.startswith("LT("):
