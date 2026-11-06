@@ -1,0 +1,92 @@
+name: Build & Release Firmware
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name for the release (e.g. v1.0.0)'
+        required: true
+        default: 'v1.0.0'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Nyverune Corne Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install QMK CLI & Toolchain Dependencies
+        run: |
+          python3 -m pip install --upgrade pip qmk
+          sudo apt-get update
+          sudo apt-get install -y gcc-avr avr-libc gcc-arm-none-eabi libnewlib-arm-none-eabi
+
+      - name: Setup QMK Firmware Repository
+        run: |
+          qmk setup -y -H /home/runner/qmk_firmware
+
+      - name: Symlink Nyverune Keymaps
+        run: |
+          mkdir -p /home/runner/qmk_firmware/keyboards/crkbd/keymaps
+          ln -s "$GITHUB_WORKSPACE/firmware/keymaps/nyverune" /home/runner/qmk_firmware/keyboards/crkbd/keymaps/nyverune
+          ln -s "$GITHUB_WORKSPACE/firmware/keymaps/everyday" /home/runner/qmk_firmware/keyboards/crkbd/keymaps/nyverune_everyday
+          ln -s "$GITHUB_WORKSPACE/firmware/keymaps/neovim" /home/runner/qmk_firmware/keyboards/crkbd/keymaps/nyverune_neovim
+
+      - name: Compile Unified Firmware for RP2040 (Pro Micro RP2040 / CE)
+        run: |
+          cd /home/runner/qmk_firmware
+          qmk compile -kb crkbd/rev1 -km nyverune -e CONVERT_TO=rp2040_ce
+          cp .build/crkbd_rev1_nyverune_rp2040_ce.uf2 $GITHUB_WORKSPACE/crkbd_rev1_nyverune_rp2040.uf2
+
+      - name: Compile Unified Firmware for ATmega32U4 (Classic Pro Micro)
+        run: |
+          cd /home/runner/qmk_firmware
+          qmk compile -kb crkbd/rev1 -km nyverune
+          cp .build/crkbd_rev1_nyverune.hex $GITHUB_WORKSPACE/crkbd_rev1_nyverune_atmega32u4.hex
+
+      - name: Determine Release Tag
+        id: release_tag
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "tag=${{ github.event.inputs.tag_name }}" >> $GITHUB_OUTPUT
+          else
+            echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish GitHub Release with Binaries
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.release_tag.outputs.tag }}
+          name: Nyverune Corne Firmware ${{ steps.release_tag.outputs.tag }}
+          body: |
+            ## Nyverune Corne Firmware Release ${{ steps.release_tag.outputs.tag }}
+            
+            Firmware unificado para teclado split **Corne (crkbd) 3x6+3** con distribución **Español Latinoamérica** y cambio dinámico entre perfiles **Everyday** y **Neovim**.
+
+            ### Binarios incluidos:
+            * **`crkbd_rev1_nyverune_rp2040.uf2`**: Para microcontroladores **RP2040** (Raspberry Pi RP2 / Pro Micro RP2040 / SparkFun PM2040).
+              * *Instalación:* Pulsar 2 veces el botón reset físico y arrastrar el `.uf2` a la unidad `RPI-RP2`.
+            * **`crkbd_rev1_nyverune_atmega32u4.hex`**: Para microcontroladores clásicos **ATmega32U4** (Pro Micro 5V/16MHz o 3.3V/8MHz).
+              * *Instalación:* Flashear con QMK Toolbox / avrdude.
+
+            ### Características:
+            * Soporte nativo de símbolos en Español Latinoamérica (`!"$%&/()=¬^`´+-~*<>_:;¡¿?@#{}\[]`).
+            * Perfiles **Everyday** y **Neovim** combinados en una sola imagen.
+            * Cambio dinámico por hardware: Pulgares centrales (`ADJUST`) + `E` (Everyday), `N` (Neovim) o `D` (Toggle).
+            * Pantalla OLED optimizada: logo pixel-art a la derecha y estado de perfil/capa en la izquierda.
+          files: |
+            crkbd_rev1_nyverune_rp2040.uf2
+            crkbd_rev1_nyverune_atmega32u4.hex
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
