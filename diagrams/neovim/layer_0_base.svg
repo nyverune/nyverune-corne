@@ -113,7 +113,8 @@
     <rect x="554" y="212" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#FF5CB8" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="585.0" y="234.0" font-size="14" fill="#FF5CB8" class="key-main">VIM</text>
     <text x="585.0" y="252.0" fill="#FF5CB8" class="key-sub">HOLD</text>
-    <rect x="624" y="212" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#7E22CE" stroke-width="1.6" filter="url(#keyGlow)" />
-    <text x="655.0" y="242.0" font-size="12" fill="#A855F7" class="key-main">AltGr</text>
+    <rect x="624" y="212" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#FF5CB8" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="655.0" y="234.0" font-size="12" fill="#FF5CB8" class="key-main">RALT</text>
+    <text x="655.0" y="252.0" fill="#FF5CB8" class="key-sub">L2</text>
   </g>
 </svg>

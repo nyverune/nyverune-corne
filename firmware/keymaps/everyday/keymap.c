@@ -28,60 +28,60 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         /* Left Thumbs: Super, Lower (Num), Space */
         KC_LGUI, MO(_NUM), KC_SPC,
-        /* Right Thumbs: Enter (Hold: Ctrl), Raise (Nav), AltGr */
-        RCTL_T(KC_ENT), MO(_NAV), KC_RALT
+        /* Right Thumbs: Enter (Hold: Ctrl), Raise (Nav), AltGr (Hold: Sym) */
+        RCTL_T(KC_ENT), MO(_NAV), LT(_SYM, KC_RALT)
     ),
 
     [_NAV] = LAYOUT_split_3x6_3(
-        KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_INS,
+        KC_TAB,  KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_INS,
         KC_PGUP, KC_HOME, KC_UP,   KC_END,   KC_DEL,  KC_BSPC,
 
-        KC_TRNS, LCTL(KC_A), LCTL(KC_S), KC_TAB, KC_ENT, KC_ESC,
-        KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_DEL,  KC_TRNS,
+        KC_ESC,  LCTL(KC_A), LCTL(KC_S), LCTL(KC_F), KC_ENT, LCTL(KC_W),
+        KC_PGDN, KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_DEL,  KC_TRNS,
 
         KC_LSFT, LCTL(KC_Z), LCTL(KC_X), LCTL(KC_C), LCTL(KC_V), LCTL(KC_Y),
-        KC_NO,   KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY, KC_RSFT,
+        KC_NO,   KC_MNXT,    KC_VOLD,    KC_VOLU,    KC_MPLY,    KC_RSFT,
 
-        KC_TRNS, MO(_SYM), KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS
+        MO(_SYM), KC_TRNS, KC_TRNS,
+        KC_TRNS,  KC_TRNS, MO(_SYM)
     ),
 
     [_SYM] = LAYOUT_split_3x6_3(
-        KC_TILD, ES_EXLM, ES_DQUO, ES_HASH, ES_DLR, ES_PERC,
+        KC_TAB,  ES_EXLM, ES_DQUO, ES_HASH, ES_DLR, ES_PERC,
         ES_AMPR, ES_SLSH, ES_LPRN, ES_RPRN, ES_EQL, KC_DEL,
 
-        KC_TRNS, ES_BSLS, ES_PIPE, ES_LCBR, ES_RCBR, ES_GRV,
+        KC_ESC,  ES_BSLS, ES_PIPE, ES_LCBR, ES_RCBR, ES_GRV,
         ES_PLUS, ES_MINS, ES_LBRC, ES_RBRC, ES_ASTR, ES_QUES,
 
-        KC_TRNS, ES_LABK, ES_RABK, ES_ATSN, ES_TILD, ES_EURO,
-        ES_UNDS, ES_COLN, ES_SCLN, ES_IQUE, ES_IEXC, KC_TRNS,
+        KC_LSFT, ES_LABK, ES_RABK, ES_ATSN, ES_TILD, ES_EURO,
+        ES_UNDS, ES_COLN, ES_SCLN, ES_IQUE, ES_IEXC, KC_RSFT,
 
         KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
     [_NUM] = LAYOUT_split_3x6_3(
-        KC_ESC,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,
+        KC_TAB,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,
         ES_SLSH, ES_7,   ES_8,   ES_9,   ES_MINS, KC_BSPC,
 
-        KC_TAB,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10,
+        KC_ESC,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10,
         ES_ASTR, ES_4,   ES_5,   ES_6,   ES_PLUS, KC_ENT,
 
         KC_LSFT, KC_F11, KC_F12, KC_NO,  KC_NO,  KC_NO,
         ES_0,    ES_1,   ES_2,   ES_3,   ES_DOT,  KC_RSFT,
 
         KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, MO(_SYM), KC_TRNS
+        KC_TRNS, KC_TRNS, MO(_SYM)
     ),
 
     [_ADJUST] = LAYOUT_split_3x6_3(
-        QK_BOOT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_BRID, KC_BRIU, KC_NO, KC_NO, QK_BOOT,
+        KC_TAB,  QK_BOOT, KC_NO,   KC_NO,   KC_NO,   KC_NO,
+        KC_NO,   KC_BRID, KC_BRIU, KC_NO,   KC_NO,   QK_BOOT,
 
-        EE_CLR,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_ESC,  EE_CLR,  KC_NO,   KC_NO,   KC_NO,   KC_NO,
         KC_MPRV, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY, KC_MUTE,
 
-        KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
         NK_TOGG, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
 
         KC_TRNS, KC_TRNS, KC_TRNS,

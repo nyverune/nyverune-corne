@@ -61,7 +61,7 @@
 | LT2 | Left | Thumb (Inner Thumb) | `KC_SPC` | Space (␣) |
 | RT0 | Right | Thumb (Inner Thumb) | `RCTL_T(KC_ENT)` | RCTL_T(ENT) |
 | RT1 | Right | Thumb (Center Thumb) | `MO(4)` | Momentary Layer VimNav |
-| RT2 | Right | Thumb (Outer Thumb) | `KC_RALT` | AltGr (ISO) |
+| RT2 | Right | Thumb (Outer Thumb) | `LT(2,KC_RALT)` | LT(2,RALT) |
 
 ---
 
@@ -75,7 +75,7 @@
 
 | Position | Hand | Row | QMK Keycode | Primary Function |
 |---|---|---|---|---|
-| L00 | Left | Top Row | `KC_ESC` | Escape (Esc) |
+| L00 | Left | Top Row | `KC_TAB` | Tab (⇥) |
 | L01 | Left | Top Row | `VIM_BPREV` | Prev Buffer (:bprev<CR>) |
 | L02 | Left | Top Row | `LCTL(KC_U)` | Ctrl + U |
 | L03 | Left | Top Row | `LCTL(KC_D)` | Ctrl + D |
@@ -87,11 +87,11 @@
 | R03 | Right | Top Row | `KC_END` | END |
 | R04 | Right | Top Row | `VIM_SAVE` | Save Buffer (:w<CR>) |
 | R05 | Right | Top Row | `KC_BSPC` | Backspace (⌫) |
-| L10 | Left | Home Row | `KC_TRNS` | ▽ (Transparent) |
+| L10 | Left | Home Row | `KC_ESC` | Escape (Esc) |
 | L11 | Left | Home Row | `LCTL(KC_A)` | Ctrl + A |
 | L12 | Left | Home Row | `VIM_HSPLIT` | Horizontal Split (<C-w>s) |
 | L13 | Left | Home Row | `VIM_VSPLIT` | Vertical Split (<C-w>v) |
-| L14 | Left | Home Row | `KC_TAB` | Tab (⇥) |
+| L14 | Left | Home Row | `KC_NO` | · (No Key) |
 | L15 | Left | Home Row | `LCTL(KC_W)` | Ctrl + W |
 | R10 | Right | Home Row | `KC_LEFT` | LEFT |
 | R11 | Right | Home Row | `KC_DOWN` | DOWN |
@@ -111,12 +111,12 @@
 | R23 | Right | Bottom Row | `KC_NO` | · (No Key) |
 | R24 | Right | Bottom Row | `VIM_QUIT` | Quit (:q<CR>) |
 | R25 | Right | Bottom Row | `KC_RSFT` | Right Shift |
-| LT0 | Left | Thumb (Outer Thumb) | `KC_TRNS` | ▽ (Transparent) |
-| LT1 | Left | Thumb (Center Thumb) | `MO(5)` | Momentary Layer VimCode |
+| LT0 | Left | Thumb (Outer Thumb) | `MO(5)` | Momentary Layer VimCode |
+| LT1 | Left | Thumb (Center Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | LT2 | Left | Thumb (Inner Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | RT0 | Right | Thumb (Inner Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | RT1 | Right | Thumb (Center Thumb) | `KC_TRNS` | ▽ (Transparent) |
-| RT2 | Right | Thumb (Outer Thumb) | `KC_TRNS` | ▽ (Transparent) |
+| RT2 | Right | Thumb (Outer Thumb) | `MO(5)` | Momentary Layer VimCode |
 
 ---
 
@@ -130,7 +130,7 @@
 
 | Position | Hand | Row | QMK Keycode | Primary Function |
 |---|---|---|---|---|
-| L00 | Left | Top Row | `KC_ESC` | Escape (Esc) |
+| L00 | Left | Top Row | `KC_TAB` | Tab (⇥) |
 | L01 | Left | Top Row | `VIM_DIAGP` | Prev Diagnostic ([d) |
 | L02 | Left | Top Row | `VIM_DIAGN` | Next Diagnostic (]d) |
 | L03 | Left | Top Row | `VIM_HOVER` | Hover Doc (K) |
@@ -142,7 +142,7 @@
 | R03 | Right | Top Row | `KC_NO` | · (No Key) |
 | R04 | Right | Top Row | `KC_NO` | · (No Key) |
 | R05 | Right | Top Row | `KC_BSPC` | Backspace (⌫) |
-| L10 | Left | Home Row | `KC_TRNS` | ▽ (Transparent) |
+| L10 | Left | Home Row | `KC_ESC` | Escape (Esc) |
 | L11 | Left | Home Row | `VIM_ACT` | Code Action (<spc>ca) |
 | L12 | Left | Home Row | `VIM_REN` | Rename Symbol (<spc>rn) |
 | L13 | Left | Home Row | `KC_NO` | · (No Key) |
@@ -185,7 +185,7 @@
 
 | Position | Hand | Row | QMK Keycode | Primary Function |
 |---|---|---|---|---|
-| L00 | Left | Top Row | `KC_TILD` | ~ (Tilde) |
+| L00 | Left | Top Row | `KC_TAB` | Tab (⇥) |
 | L01 | Left | Top Row | `ES_EXLM` | EXLM |
 | L02 | Left | Top Row | `ES_DQUO` | DQUO |
 | L03 | Left | Top Row | `ES_HASH` | # (Hash) |
@@ -197,7 +197,7 @@
 | R03 | Right | Top Row | `ES_RPRN` | ) (Right Paren) |
 | R04 | Right | Top Row | `ES_EQL` | EQL |
 | R05 | Right | Top Row | `KC_DEL` | Delete (Del) |
-| L10 | Left | Home Row | `KC_TRNS` | ▽ (Transparent) |
+| L10 | Left | Home Row | `KC_ESC` | Escape (Esc) |
 | L11 | Left | Home Row | `ES_BSLS` | \ (Backslash) |
 | L12 | Left | Home Row | `ES_PIPE` | | (Pipe) |
 | L13 | Left | Home Row | `ES_LCBR` | { (Left Brace) |
@@ -209,7 +209,7 @@
 | R13 | Right | Home Row | `ES_RBRC` | ] (Right Bracket) |
 | R14 | Right | Home Row | `ES_ASTR` | * (Asterisk) |
 | R15 | Right | Home Row | `ES_QUES` | ? (Question) |
-| L20 | Left | Bottom Row | `KC_TRNS` | ▽ (Transparent) |
+| L20 | Left | Bottom Row | `KC_LSFT` | Left Shift |
 | L21 | Left | Bottom Row | `ES_LABK` | < (Less than) |
 | L22 | Left | Bottom Row | `ES_RABK` | > (Greater than) |
 | L23 | Left | Bottom Row | `ES_ATSN` | @ (At) |
@@ -220,7 +220,7 @@
 | R22 | Right | Bottom Row | `ES_SCLN` | ; (Semicolon) |
 | R23 | Right | Bottom Row | `ES_IQUE` | ¿ (Inverted Question) |
 | R24 | Right | Bottom Row | `ES_IEXC` | ¡ (Inverted Exclamation) |
-| R25 | Right | Bottom Row | `KC_TRNS` | ▽ (Transparent) |
+| R25 | Right | Bottom Row | `KC_RSFT` | Right Shift |
 | LT0 | Left | Thumb (Outer Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | LT1 | Left | Thumb (Center Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | LT2 | Left | Thumb (Inner Thumb) | `KC_TRNS` | ▽ (Transparent) |
@@ -240,7 +240,7 @@
 
 | Position | Hand | Row | QMK Keycode | Primary Function |
 |---|---|---|---|---|
-| L00 | Left | Top Row | `KC_ESC` | Escape (Esc) |
+| L00 | Left | Top Row | `KC_TAB` | Tab (⇥) |
 | L01 | Left | Top Row | `KC_F1` | F1 |
 | L02 | Left | Top Row | `KC_F2` | F2 |
 | L03 | Left | Top Row | `KC_F3` | F3 |
@@ -252,7 +252,7 @@
 | R03 | Right | Top Row | `ES_9` | 9 |
 | R04 | Right | Top Row | `ES_MINS` | - (Hyphen) |
 | R05 | Right | Top Row | `KC_BSPC` | Backspace (⌫) |
-| L10 | Left | Home Row | `KC_TAB` | Tab (⇥) |
+| L10 | Left | Home Row | `KC_ESC` | Escape (Esc) |
 | L11 | Left | Home Row | `KC_F6` | F6 |
 | L12 | Left | Home Row | `KC_F7` | F7 |
 | L13 | Left | Home Row | `KC_F8` | F8 |
@@ -280,23 +280,23 @@
 | LT1 | Left | Thumb (Center Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | LT2 | Left | Thumb (Inner Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | RT0 | Right | Thumb (Inner Thumb) | `KC_TRNS` | ▽ (Transparent) |
-| RT1 | Right | Thumb (Center Thumb) | `MO(2)` | Momentary Layer Sym |
-| RT2 | Right | Thumb (Outer Thumb) | `KC_TRNS` | ▽ (Transparent) |
+| RT1 | Right | Thumb (Center Thumb) | `KC_TRNS` | ▽ (Transparent) |
+| RT2 | Right | Thumb (Outer Thumb) | `MO(2)` | Momentary Layer Sym |
 
 ---
 
-## Layer 6: ADJUST — System & Hardware Control
+## Layer 7: ADJUST — System & Hardware Control
 
 *Hardware reset, bootloader, audio and OS controls.*
 
-![Diagram](../diagrams/neovim/layer_6_adjust.svg)
+![Diagram](../diagrams/neovim/layer_7_adjust.svg)
 
 ### Key Mapping Matrix
 
 | Position | Hand | Row | QMK Keycode | Primary Function |
 |---|---|---|---|---|
-| L00 | Left | Top Row | `QK_BOOT` | Bootloader Jump |
-| L01 | Left | Top Row | `KC_NO` | · (No Key) |
+| L00 | Left | Top Row | `KC_TAB` | Tab (⇥) |
+| L01 | Left | Top Row | `QK_BOOT` | Bootloader Jump |
 | L02 | Left | Top Row | `KC_NO` | · (No Key) |
 | L03 | Left | Top Row | `KC_NO` | · (No Key) |
 | L04 | Left | Top Row | `KC_NO` | · (No Key) |
@@ -307,8 +307,8 @@
 | R03 | Right | Top Row | `KC_NO` | · (No Key) |
 | R04 | Right | Top Row | `KC_NO` | · (No Key) |
 | R05 | Right | Top Row | `QK_BOOT` | Bootloader Jump |
-| L10 | Left | Home Row | `EE_CLR` | Clear EEPROM |
-| L11 | Left | Home Row | `KC_NO` | · (No Key) |
+| L10 | Left | Home Row | `KC_ESC` | Escape (Esc) |
+| L11 | Left | Home Row | `EE_CLR` | Clear EEPROM |
 | L12 | Left | Home Row | `KC_NO` | · (No Key) |
 | L13 | Left | Home Row | `KC_NO` | · (No Key) |
 | L14 | Left | Home Row | `KC_NO` | · (No Key) |
@@ -319,7 +319,7 @@
 | R13 | Right | Home Row | `KC_VOLU` | Volume Up |
 | R14 | Right | Home Row | `KC_MPLY` | Play / Pause |
 | R15 | Right | Home Row | `KC_MUTE` | Mute Audio |
-| L20 | Left | Bottom Row | `KC_NO` | · (No Key) |
+| L20 | Left | Bottom Row | `KC_LSFT` | Left Shift |
 | L21 | Left | Bottom Row | `KC_NO` | · (No Key) |
 | L22 | Left | Bottom Row | `KC_NO` | · (No Key) |
 | L23 | Left | Bottom Row | `KC_NO` | · (No Key) |

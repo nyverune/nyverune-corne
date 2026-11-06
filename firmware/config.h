@@ -16,7 +16,7 @@
 
 // Combo configuration - relaxed timing for comfortable simultaneous chording
 #define COMBO_COUNT 16
-#define COMBO_TERM 60
+#define COMBO_TERM 75
 
 // Tap-Dance configuration
 #define TAPPING_TERM_PER_KEY

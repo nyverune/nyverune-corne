@@ -10,7 +10,7 @@
 [  Tab  ] [   Q   ] [   W   ] [   E   ] [   R   ] [   T   ]    [   Y   ] [   U   ] [   I   ] [   O   ] [   P   ] [ Bksp  ]
 [  Esc  ] [   A   ] [   S   ] [   D   ] [   F   ] [   G   ]    [   H   ] [   J   ] [   K   ] [   L   ] [   Ñ   ] [   ´   ]
 [ Shift ] [   Z   ] [   X   ] [   C   ] [   V   ] [   B   ]    [   N   ] [   M   ] [   ,   ] [   .   ] [   -   ] [ Shift ]
-                              [ Super ] [  NUM  ] [ Space ]    [  Ent  ] [  VIM  ] [ AltGr ]
+                              [ Super ] [  NUM  ] [ Space ]    [  Ent  ] [  VIM  ] [ RALT  ]
 ```
 
 ## Layer 4: VIM_NAV
@@ -20,10 +20,10 @@
 ### Layer 4: VIM_NAV (Neovim Navigation & Splits)
 
 ```
-[  Esc  ] [:bprev ] [  ^ U  ] [  ^ D  ] [:bnext ] [  ^ T  ]    [ Home  ] [ PgDn  ] [ PgUp  ] [  End  ] [  :w   ] [ Bksp  ]
-[   ▽   ] [  ^ A  ] [ split ] [vsplit ] [  Tab  ] [  ^ W  ]    [ Left  ] [ Down  ] [  Up   ] [ Right ] [   :   ] [ Enter ]
+[  Tab  ] [:bprev ] [  ^ U  ] [  ^ D  ] [:bnext ] [  ^ T  ]    [ Home  ] [ PgDn  ] [ PgUp  ] [  End  ] [  :w   ] [ Bksp  ]
+[  Esc  ] [  ^ A  ] [ split ] [vsplit ] [   ·   ] [  ^ W  ]    [ Left  ] [ Down  ] [  Up   ] [ Right ] [   :   ] [ Enter ]
 [ Shift ] [  ^ Z  ] [  ^ X  ] [  ^ C  ] [  ^ V  ] [  ^ Y  ]    [  ^ O  ] [  ^ I  ] [   ·   ] [   ·   ] [  :q   ] [ Shift ]
-                              [   ▽   ] [ CODE  ] [   ▽   ]    [   ▽   ] [   ▽   ] [   ▽   ]
+                              [ CODE  ] [   ▽   ] [   ▽   ]    [   ▽   ] [   ▽   ] [ CODE  ]
 ```
 
 ## Layer 5: VIM_CODE
@@ -33,8 +33,8 @@
 ### Layer 5: VIM_CODE (Neovim LSP & Code Actions)
 
 ```
-[  Esc  ] [  [d   ] [  ]d   ] [   K   ] [   ·   ] [   ·   ]    [   ·   ] [  gd   ] [  gr   ] [   ·   ] [   ·   ] [ Bksp  ]
-[   ▽   ] [ Code  ] [Rename ] [   ·   ] [   ·   ] [   ·   ]    [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [ Enter ]
+[  Tab  ] [  [d   ] [  ]d   ] [   K   ] [   ·   ] [   ·   ]    [   ·   ] [  gd   ] [  gr   ] [   ·   ] [   ·   ] [ Bksp  ]
+[  Esc  ] [ Code  ] [Rename ] [   ·   ] [   ·   ] [   ·   ]    [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [ Enter ]
 [ Shift ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]    [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [ Shift ]
                               [   ▽   ] [   ▽   ] [   ▽   ]    [   ▽   ] [   ▽   ] [   ▽   ]
 ```
@@ -46,9 +46,9 @@
 ### Layer 2: SYM (Programming & Spanish Symbols)
 
 ```
-[   ~   ] [   !   ] [   "   ] [   #   ] [   $   ] [   %   ]    [   &   ] [   /   ] [   (   ] [   )   ] [   =   ] [  Del  ]
-[   ▽   ] [   \   ] [   |   ] [   {   ] [   }   ] [   `   ]    [   +   ] [   -   ] [   [   ] [   ]   ] [   *   ] [   ?   ]
-[   ▽   ] [   <   ] [   >   ] [   @   ] [   ~   ] [   €   ]    [   _   ] [   :   ] [   ;   ] [   ¿   ] [   ¡   ] [   ▽   ]
+[  Tab  ] [   !   ] [   "   ] [   #   ] [   $   ] [   %   ]    [   &   ] [   /   ] [   (   ] [   )   ] [   =   ] [  Del  ]
+[  Esc  ] [   \   ] [   |   ] [   {   ] [   }   ] [   `   ]    [   +   ] [   -   ] [   [   ] [   ]   ] [   *   ] [   ?   ]
+[ Shift ] [   <   ] [   >   ] [   @   ] [   ~   ] [   €   ]    [   _   ] [   :   ] [   ;   ] [   ¿   ] [   ¡   ] [ Shift ]
                               [   ▽   ] [   ▽   ] [   ▽   ]    [   ▽   ] [   ▽   ] [   ▽   ]
 ```
 
@@ -59,21 +59,21 @@
 ### Layer 3: NUM (Numpad & Function Keys)
 
 ```
-[  Esc  ] [  F1   ] [  F2   ] [  F3   ] [  F4   ] [  F5   ]    [   /   ] [   7   ] [   8   ] [   9   ] [   -   ] [ Bksp  ]
-[  Tab  ] [  F6   ] [  F7   ] [  F8   ] [  F9   ] [  F10  ]    [   *   ] [   4   ] [   5   ] [   6   ] [   +   ] [ Enter ]
+[  Tab  ] [  F1   ] [  F2   ] [  F3   ] [  F4   ] [  F5   ]    [   /   ] [   7   ] [   8   ] [   9   ] [   -   ] [ Bksp  ]
+[  Esc  ] [  F6   ] [  F7   ] [  F8   ] [  F9   ] [  F10  ]    [   *   ] [   4   ] [   5   ] [   6   ] [   +   ] [ Enter ]
 [ Shift ] [  F11  ] [  F12  ] [   ·   ] [   ·   ] [   ·   ]    [   0   ] [   1   ] [   2   ] [   3   ] [   .   ] [ Shift ]
-                              [   ▽   ] [   ▽   ] [   ▽   ]    [   ▽   ] [  SYM  ] [   ▽   ]
+                              [   ▽   ] [   ▽   ] [   ▽   ]    [   ▽   ] [   ▽   ] [  SYM  ]
 ```
 
-## Layer 6: ADJUST
+## Layer 7: ADJUST
 
-![Layer 6 Diagram](layer_6_adjust.svg)
+![Layer 7 Diagram](layer_7_adjust.svg)
 
-### Layer 6: ADJUST (System & Hardware Control)
+### Layer 7: ADJUST (System & Hardware Control)
 
 ```
-[ BOOT  ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]    [   ·   ] [ Bri-  ] [ Bri+  ] [   ·   ] [   ·   ] [ BOOT  ]
-[ CLEAR ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]    [ Prev  ] [ Next  ] [ Vol-  ] [ Vol+  ] [ Play  ] [ Mute  ]
-[   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]    [ NKRO  ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]
+[  Tab  ] [ BOOT  ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]    [   ·   ] [ Bri-  ] [ Bri+  ] [   ·   ] [   ·   ] [ BOOT  ]
+[  Esc  ] [ CLEAR ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]    [ Prev  ] [ Next  ] [ Vol-  ] [ Vol+  ] [ Play  ] [ Mute  ]
+[ Shift ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]    [ NKRO  ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]
                               [   ▽   ] [   ▽   ] [   ▽   ]    [   ▽   ] [   ▽   ] [   ▽   ]
 ```

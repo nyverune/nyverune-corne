@@ -42,29 +42,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         /* Left Thumbs: Super, Lower (Num), Space */
         KC_LGUI, MO(_NUM), KC_SPC,
-        /* Right Thumbs: Enter (Hold: Ctrl), Raise (Vim Nav), AltGr */
-        RCTL_T(KC_ENT), MO(_VIM_NAV), KC_RALT
+        /* Right Thumbs: Enter (Hold: Ctrl), Raise (Vim Nav), AltGr (Hold: Sym) */
+        RCTL_T(KC_ENT), MO(_VIM_NAV), LT(_SYM, KC_RALT)
     ),
 
     [_VIM_NAV] = LAYOUT_split_3x6_3(
-        KC_ESC,  VIM_BPREV,    LCTL(KC_U),  LCTL(KC_D),  VIM_BNEXT,   LCTL(KC_T),
+        KC_TAB,  VIM_BPREV,    LCTL(KC_U),  LCTL(KC_D),  VIM_BNEXT,   LCTL(KC_T),
         KC_HOME, KC_PGDN,      KC_PGUP,     KC_END,      VIM_SAVE,    KC_BSPC,
 
-        KC_TRNS, LCTL(KC_A),   VIM_HSPLIT,  VIM_VSPLIT,  KC_TAB,      LCTL(KC_W),
+        KC_ESC,  LCTL(KC_A),   VIM_HSPLIT,  VIM_VSPLIT,  KC_NO,       LCTL(KC_W),
         KC_LEFT, KC_DOWN,      KC_UP,       KC_RGHT,     ES_COLN,     KC_ENT,
 
         KC_LSFT, LCTL(KC_Z),   LCTL(KC_X),  LCTL(KC_C),  LCTL(KC_V),  LCTL(KC_Y),
         LCTL(KC_O), LCTL(KC_I), KC_NO,      KC_NO,       VIM_QUIT,    KC_RSFT,
 
-        KC_TRNS, MO(_VIM_CODE), KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS
+        MO(_VIM_CODE), KC_TRNS, KC_TRNS,
+        KC_TRNS,       KC_TRNS, MO(_VIM_CODE)
     ),
 
     [_VIM_CODE] = LAYOUT_split_3x6_3(
-        KC_ESC,  VIM_DIAGP, VIM_DIAGN, VIM_HOVER, KC_NO,   KC_NO,
+        KC_TAB,  VIM_DIAGP, VIM_DIAGN, VIM_HOVER, KC_NO,   KC_NO,
         KC_NO,   VIM_DEF,   VIM_REF,   KC_NO,     KC_NO,   KC_BSPC,
 
-        KC_TRNS, VIM_ACT,   VIM_REN,   KC_NO,     KC_NO,   KC_NO,
+        KC_ESC,  VIM_ACT,   VIM_REN,   KC_NO,     KC_NO,   KC_NO,
         KC_NO,   KC_NO,     KC_NO,     KC_NO,     KC_NO,   KC_ENT,
 
         KC_LSFT, KC_NO,     KC_NO,     KC_NO,     KC_NO,   KC_NO,
@@ -75,41 +75,41 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_SYM] = LAYOUT_split_3x6_3(
-        KC_TILD, ES_EXLM, ES_DQUO, ES_HASH, ES_DLR, ES_PERC,
+        KC_TAB,  ES_EXLM, ES_DQUO, ES_HASH, ES_DLR, ES_PERC,
         ES_AMPR, ES_SLSH, ES_LPRN, ES_RPRN, ES_EQL, KC_DEL,
 
-        KC_TRNS, ES_BSLS, ES_PIPE, ES_LCBR, ES_RCBR, ES_GRV,
+        KC_ESC,  ES_BSLS, ES_PIPE, ES_LCBR, ES_RCBR, ES_GRV,
         ES_PLUS, ES_MINS, ES_LBRC, ES_RBRC, ES_ASTR, ES_QUES,
 
-        KC_TRNS, ES_LABK, ES_RABK, ES_ATSN, ES_TILD, ES_EURO,
-        ES_UNDS, ES_COLN, ES_SCLN, ES_IQUE, ES_IEXC, KC_TRNS,
+        KC_LSFT, ES_LABK, ES_RABK, ES_ATSN, ES_TILD, ES_EURO,
+        ES_UNDS, ES_COLN, ES_SCLN, ES_IQUE, ES_IEXC, KC_RSFT,
 
         KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
     [_NUM] = LAYOUT_split_3x6_3(
-        KC_ESC,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,
+        KC_TAB,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,
         ES_SLSH, ES_7,   ES_8,   ES_9,   ES_MINS, KC_BSPC,
 
-        KC_TAB,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10,
+        KC_ESC,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10,
         ES_ASTR, ES_4,   ES_5,   ES_6,   ES_PLUS, KC_ENT,
 
         KC_LSFT, KC_F11, KC_F12, KC_NO,  KC_NO,  KC_NO,
         ES_0,    ES_1,   ES_2,   ES_3,   ES_DOT,  KC_RSFT,
 
         KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, MO(_SYM), KC_TRNS
+        KC_TRNS, KC_TRNS, MO(_SYM)
     ),
 
     [_ADJUST] = LAYOUT_split_3x6_3(
-        QK_BOOT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_BRID, KC_BRIU, KC_NO, KC_NO, QK_BOOT,
+        KC_TAB,  QK_BOOT, KC_NO,   KC_NO,   KC_NO,   KC_NO,
+        KC_NO,   KC_BRID, KC_BRIU, KC_NO,   KC_NO,   QK_BOOT,
 
-        EE_CLR,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_ESC,  EE_CLR,  KC_NO,   KC_NO,   KC_NO,   KC_NO,
         KC_MPRV, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY, KC_MUTE,
 
-        KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
         NK_TOGG, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
 
         KC_TRNS, KC_TRNS, KC_TRNS,
@@ -117,48 +117,71 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-// Macro execution for specialized Neovim commands
+static void send_vim_cmd(const char *cmd) {
+    tap_code16(ES_COLN);
+    for (const char *p = cmd; *p; p++) {
+        if (*p >= 'a' && *p <= 'z') {
+            tap_code(KC_A + (*p - 'a'));
+        } else if (*p == '\n') {
+            tap_code(KC_ENT);
+        } else if (*p == ' ') {
+            tap_code(KC_SPC);
+        }
+    }
+}
+
+// Macro execution for specialized Neovim commands with native Spanish keycode compatibility
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         switch (keycode) {
             case VIM_SAVE:
-                SEND_STRING(":w\n");
+                send_vim_cmd("w\n");
                 return false;
             case VIM_QUIT:
-                SEND_STRING(":q\n");
+                send_vim_cmd("q\n");
                 return false;
             case VIM_VSPLIT:
-                SEND_STRING(SS_LCTL("w") "v");
+                tap_code16(C(KC_W));
+                tap_code(KC_V);
                 return false;
             case VIM_HSPLIT:
-                SEND_STRING(SS_LCTL("w") "s");
+                tap_code16(C(KC_W));
+                tap_code(KC_S);
                 return false;
             case VIM_BNEXT:
-                SEND_STRING(":bnext\n");
+                send_vim_cmd("bnext\n");
                 return false;
             case VIM_BPREV:
-                SEND_STRING(":bprev\n");
+                send_vim_cmd("bprev\n");
                 return false;
             case VIM_DEF:
-                SEND_STRING("gd");
+                tap_code(KC_G);
+                tap_code(KC_D);
                 return false;
             case VIM_REF:
-                SEND_STRING("gr");
+                tap_code(KC_G);
+                tap_code(KC_R);
                 return false;
             case VIM_DIAGN:
-                SEND_STRING("]d");
+                tap_code16(ES_RBRC);
+                tap_code(KC_D);
                 return false;
             case VIM_DIAGP:
-                SEND_STRING("[d");
+                tap_code16(ES_LBRC);
+                tap_code(KC_D);
                 return false;
             case VIM_HOVER:
-                SEND_STRING("K");
+                tap_code16(S(KC_K));
                 return false;
             case VIM_ACT:
-                SEND_STRING(" ca");
+                tap_code(KC_SPC);
+                tap_code(KC_C);
+                tap_code(KC_A);
                 return false;
             case VIM_REN:
-                SEND_STRING(" rn");
+                tap_code(KC_SPC);
+                tap_code(KC_R);
+                tap_code(KC_N);
                 return false;
         }
     }

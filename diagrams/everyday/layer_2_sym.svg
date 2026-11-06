@@ -18,7 +18,8 @@
   <text x="52" y="70" class="subtitle">Programming &amp; Spanish Symbols: Clean, single-chord access to brackets, braces and programming characters without awkward AltGr combinations.</text>
   <g transform="translate(32, 96)">
     <rect x="0" y="0" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
-    <text x="31.0" y="30.0" font-size="14" fill="#F6F0FC" class="key-main">~</text>
+    <text x="31.0" y="22.0" font-size="14" fill="#F6F0FC" class="key-main">Tab</text>
+    <text x="31.0" y="40.0" fill="#D9C4FF" class="key-sub">⇥</text>
     <rect x="70" y="0" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="101.0" y="30.0" font-size="14" fill="#F6F0FC" class="key-main">!</text>
     <rect x="140" y="0" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
@@ -44,8 +45,8 @@
     <rect x="834" y="0" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="865.0" y="22.0" font-size="14" fill="#F6F0FC" class="key-main">Del</text>
     <text x="865.0" y="40.0" fill="#D9C4FF" class="key-sub">⌦</text>
-    <rect x="0" y="68" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
-    <text x="31.0" y="98.0" font-size="14" fill="#443b54" class="key-main">▽</text>
+    <rect x="0" y="68" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="31.0" y="98.0" font-size="14" fill="#F6F0FC" class="key-main">Esc</text>
     <rect x="70" y="68" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="101.0" y="98.0" font-size="14" fill="#F6F0FC" class="key-main">\</text>
     <rect x="140" y="68" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
@@ -71,8 +72,9 @@
     <text x="795.0" y="98.0" font-size="14" fill="#F6F0FC" class="key-main">*</text>
     <rect x="834" y="68" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="865.0" y="98.0" font-size="14" fill="#F6F0FC" class="key-main">?</text>
-    <rect x="0" y="136" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
-    <text x="31.0" y="166.0" font-size="14" fill="#443b54" class="key-main">▽</text>
+    <rect x="0" y="136" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#7E22CE" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="31.0" y="158.0" font-size="12" fill="#A855F7" class="key-main">Shift</text>
+    <text x="31.0" y="176.0" fill="#D9C4FF" class="key-sub">⇧</text>
     <rect x="70" y="136" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="101.0" y="166.0" font-size="14" fill="#F6F0FC" class="key-main">&lt;</text>
     <rect x="140" y="136" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
@@ -93,8 +95,9 @@
     <text x="725.0" y="166.0" font-size="14" fill="#F6F0FC" class="key-main">¿</text>
     <rect x="764" y="136" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="795.0" y="166.0" font-size="14" fill="#F6F0FC" class="key-main">¡</text>
-    <rect x="834" y="136" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
-    <text x="865.0" y="166.0" font-size="14" fill="#443b54" class="key-main">▽</text>
+    <rect x="834" y="136" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#7E22CE" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="865.0" y="158.0" font-size="12" fill="#A855F7" class="key-main">Shift</text>
+    <text x="865.0" y="176.0" fill="#D9C4FF" class="key-sub">⇧</text>
     <rect x="210" y="212" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="241.0" y="242.0" font-size="14" fill="#443b54" class="key-main">▽</text>
     <rect x="280" y="212" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />

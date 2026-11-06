@@ -13,7 +13,7 @@
         "KC_TAB", "ES_Q", "ES_W", "ES_E", "ES_R", "ES_T",         "ES_Y", "ES_U", "ES_I", "ES_O", "ES_P", "KC_BSPC",
         "LCTL_T(KC_ESC)", "ES_A", "ES_S", "ES_D", "ES_F", "ES_G", "ES_H", "ES_J", "ES_K", "ES_L", "ES_NTIL", "ES_ACUT",
         "KC_LSFT", "ES_Z", "ES_X", "ES_C", "ES_V", "ES_B",         "ES_N", "ES_M", "ES_COMM", "ES_DOT", "ES_MINS", "KC_RSFT",
-                            "KC_LGUI", "MO(3)", "KC_SPC",           "RCTL_T(KC_ENT)", "MO(1)", "KC_RALT"
+                            "KC_LGUI", "MO(3)", "KC_SPC",           "RCTL_T(KC_ENT)", "MO(1)", "LT(2,KC_RALT)"
       ]
     },
     {
@@ -22,10 +22,10 @@
       "title": "Navigation & Clipboard",
       "description": "Dedicated cursor movement, text editing, page scrolling and clipboard shortcuts.",
       "keys": [
-        "KC_TRNS", "KC_HOME", "KC_PGDN", "KC_PGUP", "KC_END",  "KC_INS",   "KC_PGUP", "KC_HOME", "KC_UP",   "KC_END",   "KC_DEL",  "KC_BSPC",
-        "KC_TRNS", "LCTL(KC_A)", "LCTL(KC_S)", "KC_TAB", "KC_ENT", "KC_ESC", "KC_PGDN", "KC_LEFT", "KC_DOWN", "KC_RGHT", "KC_DEL",  "KC_TRNS",
+        "KC_TAB",  "KC_HOME", "KC_PGDN", "KC_PGUP", "KC_END",  "KC_INS",   "KC_PGUP", "KC_HOME", "KC_UP",   "KC_END",   "KC_DEL",  "KC_BSPC",
+        "KC_ESC",  "LCTL(KC_A)", "LCTL(KC_S)", "LCTL(KC_F)", "KC_ENT", "LCTL(KC_W)", "KC_PGDN", "KC_LEFT", "KC_DOWN", "KC_RGHT", "KC_DEL",  "KC_TRNS",
         "KC_LSFT", "LCTL(KC_Z)", "LCTL(KC_X)", "LCTL(KC_C)", "LCTL(KC_V)", "LCTL(KC_Y)", "KC_NO", "KC_MNXT", "KC_VOLD", "KC_VOLU", "KC_MPLY", "KC_RSFT",
-                                "KC_TRNS", "MO(2)", "KC_TRNS",             "KC_TRNS", "KC_TRNS", "KC_TRNS"
+                                "MO(2)", "KC_TRNS", "KC_TRNS",             "KC_TRNS", "KC_TRNS", "MO(2)"
       ]
     },
     {
@@ -34,9 +34,9 @@
       "title": "Programming & Spanish Symbols",
       "description": "Clean, single-chord access to brackets, braces and programming characters without awkward AltGr combinations.",
       "keys": [
-        "KC_TILD", "ES_EXLM", "ES_DQUO", "ES_HASH", "ES_DLR", "ES_PERC", "ES_AMPR", "ES_SLSH", "ES_LPRN", "ES_RPRN", "ES_EQL", "KC_DEL",
-        "KC_TRNS", "ES_BSLS", "ES_PIPE", "ES_LCBR", "ES_RCBR", "ES_GRV", "ES_PLUS", "ES_MINS", "ES_LBRC", "ES_RBRC", "ES_ASTR", "ES_QUES",
-        "KC_TRNS", "ES_LABK", "ES_RABK", "ES_ATSN", "ES_TILD", "ES_EURO", "ES_UNDS", "ES_COLN", "ES_SCLN", "ES_IQUE", "ES_IEXC", "KC_TRNS",
+        "KC_TAB",  "ES_EXLM", "ES_DQUO", "ES_HASH", "ES_DLR", "ES_PERC", "ES_AMPR", "ES_SLSH", "ES_LPRN", "ES_RPRN", "ES_EQL", "KC_DEL",
+        "KC_ESC",  "ES_BSLS", "ES_PIPE", "ES_LCBR", "ES_RCBR", "ES_GRV", "ES_PLUS", "ES_MINS", "ES_LBRC", "ES_RBRC", "ES_ASTR", "ES_QUES",
+        "KC_LSFT", "ES_LABK", "ES_RABK", "ES_ATSN", "ES_TILD", "ES_EURO", "ES_UNDS", "ES_COLN", "ES_SCLN", "ES_IQUE", "ES_IEXC", "KC_RSFT",
                                 "KC_TRNS", "KC_TRNS", "KC_TRNS",           "KC_TRNS", "KC_TRNS", "KC_TRNS"
       ]
     },
@@ -46,21 +46,21 @@
       "title": "Numpad & Function Keys",
       "description": "Right-hand numeric keypad layout paired with left-hand function keys F1-F12.",
       "keys": [
-        "KC_ESC",  "KC_F1",  "KC_F2",  "KC_F3",  "KC_F4",  "KC_F5",   "ES_SLSH", "ES_7", "ES_8", "ES_9", "ES_MINS", "KC_BSPC",
-        "KC_TAB",  "KC_F6",  "KC_F7",  "KC_F8",  "KC_F9",  "KC_F10",  "ES_ASTR", "ES_4", "ES_5", "ES_6", "ES_PLUS", "KC_ENT",
+        "KC_TAB",  "KC_F1",  "KC_F2",  "KC_F3",  "KC_F4",  "KC_F5",   "ES_SLSH", "ES_7", "ES_8", "ES_9", "ES_MINS", "KC_BSPC",
+        "KC_ESC",  "KC_F6",  "KC_F7",  "KC_F8",  "KC_F9",  "KC_F10",  "ES_ASTR", "ES_4", "ES_5", "ES_6", "ES_PLUS", "KC_ENT",
         "KC_LSFT", "KC_F11", "KC_F12", "KC_NO",  "KC_NO",  "KC_NO",   "ES_0",    "ES_1", "ES_2", "ES_3", "ES_DOT",  "KC_RSFT",
-                             "KC_TRNS", "KC_TRNS", "KC_TRNS",         "KC_TRNS", "MO(2)", "KC_TRNS"
+                             "KC_TRNS", "KC_TRNS", "KC_TRNS",         "KC_TRNS", "KC_TRNS", "MO(2)"
       ]
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "ADJUST",
       "title": "System & Hardware Control",
       "description": "Triggered by holding Lower + Raise thumbs together. Hardware reset, bootloader, audio and OS controls.",
       "keys": [
-        "QK_BOOT", "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO",   "KC_NO", "KC_BRID", "KC_BRIU", "KC_NO", "KC_NO", "QK_BOOT",
-        "EE_CLR",  "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO",   "KC_MPRV", "KC_MNXT", "KC_VOLD", "KC_VOLU", "KC_MPLY", "KC_MUTE",
-        "KC_NO",   "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO",   "NK_TOGG", "KC_NO",   "KC_NO",   "KC_NO",   "KC_NO",   "KC_NO",
+        "KC_TAB",  "QK_BOOT", "KC_NO", "KC_NO", "KC_NO", "KC_NO",   "KC_NO", "KC_BRID", "KC_BRIU", "KC_NO", "KC_NO", "QK_BOOT",
+        "KC_ESC",  "EE_CLR",  "KC_NO", "KC_NO", "KC_NO", "KC_NO",   "KC_MPRV", "KC_MNXT", "KC_VOLD", "KC_VOLU", "KC_MPLY", "KC_MUTE",
+        "KC_LSFT", "KC_NO",   "KC_NO", "KC_NO", "KC_NO", "KC_NO",   "NK_TOGG", "KC_NO",   "KC_NO",   "KC_NO",   "KC_NO",   "KC_NO",
                             "KC_TRNS", "KC_TRNS", "KC_TRNS",       "KC_TRNS", "KC_TRNS", "KC_TRNS"
       ]
     }
