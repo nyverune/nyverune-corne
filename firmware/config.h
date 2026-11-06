@@ -14,9 +14,9 @@
 #define PERMISSIVE_HOLD
 #define HOLD_ON_OTHER_KEY_PRESS
 
-// Combo configuration - tight timing to avoid accidental chords during fast prose typing
+// Combo configuration - relaxed timing for comfortable simultaneous chording
 #define COMBO_COUNT 16
-#define COMBO_TERM 35
+#define COMBO_TERM 60
 
 // Tap-Dance configuration
 #define TAPPING_TERM_PER_KEY
