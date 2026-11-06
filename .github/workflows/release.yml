@@ -72,19 +72,20 @@ jobs:
           body: |
             ## Nyverune Corne Firmware Release ${{ steps.release_tag.outputs.tag }}
             
-            Firmware unificado para teclado split **Corne (crkbd) 3x6+3** con distribución **Español Latinoamérica** y cambio dinámico entre perfiles **Everyday** y **Neovim**.
+            Unified firmware for the **Corne (crkbd) 3x6+3** split keyboard featuring native **Latin American Spanish QWERTY** mapping and dynamic runtime switching between **Everyday** and **Neovim** profiles.
 
-            ### Binarios incluidos:
-            * **`crkbd_rev1_nyverune_rp2040.uf2`**: Para microcontroladores **RP2040** (Raspberry Pi RP2 / Pro Micro RP2040 / SparkFun PM2040).
-              * *Instalación:* Pulsar 2 veces el botón reset físico y arrastrar el `.uf2` a la unidad `RPI-RP2`.
-            * **`crkbd_rev1_nyverune_atmega32u4.hex`**: Para microcontroladores clásicos **ATmega32U4** (Pro Micro 5V/16MHz o 3.3V/8MHz).
-              * *Instalación:* Flashear con QMK Toolbox / avrdude.
+            ### Included Binaries:
+            * **`crkbd_rev1_nyverune_rp2040.uf2`**: For **RP2040** microcontrollers (Raspberry Pi RP2 / Pro Micro RP2040 / SparkFun PM2040).
+              * *Installation:* Double-tap the physical reset button to mount the `RPI-RP2` drive and drag & drop the `.uf2` file.
+            * **`crkbd_rev1_nyverune_atmega32u4.hex`**: For classic **ATmega32U4** microcontrollers (Pro Micro 5V/16MHz or 3.3V/8MHz).
+              * *Installation:* Flash using QMK Toolbox or `avrdude`.
 
-            ### Características:
-            * Soporte nativo de símbolos en Español Latinoamérica (`!"$%&/()=¬^`´+-~*<>_:;¡¿?@#{}\[]`).
-            * Perfiles **Everyday** y **Neovim** combinados en una sola imagen.
-            * Cambio dinámico por hardware: Pulgares centrales (`ADJUST`) + `E` (Everyday), `N` (Neovim) o `D` (Toggle).
-            * Pantalla OLED optimizada: logo pixel-art a la derecha y estado de perfil/capa en la izquierda.
+            ### Highlights & Features:
+            * Complete native Latin American Spanish symbols (`!"$%&/()=¬^`´+-~*<>_:;¡¿?@#{}\[]`).
+            * Unified single firmware image containing both **Everyday** and **Neovim** profiles.
+            * Hardware dynamic switching: Hold both center thumb keys (`ADJUST`) + `E` (Everyday), `N` (Neovim), or `D` / Outer Thumb (Toggle).
+            * Custom OLED display: Pixel-art Nyverune Corne logo on the right half, real-time profile/layer telemetry on the left half.
+            * Tuned dual-role timings: Generous tap windows for AltGr (380ms) and Control/Enter/Escape (260ms).
           files: |
             crkbd_rev1_nyverune_rp2040.uf2
             crkbd_rev1_nyverune_atmega32u4.hex
