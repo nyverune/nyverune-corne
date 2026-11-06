@@ -8,7 +8,7 @@
         "mousekey": false,
         "combo": true,
         "tap_dance": false,
-        "oled": false,
+        "oled": true,
         "rgblight": false
     },
     "meta": {

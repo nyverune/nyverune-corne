@@ -93,3 +93,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _NUM, _NAV, _ADJUST);
 }
+
+#ifdef OLED_ENABLE
+#include "../../shared/oled_logo.h"
+
+void oled_render_logo(void) {
+    oled_write_raw_P(nyverune_oled_logo, sizeof(nyverune_oled_logo));
+}
+#endif
