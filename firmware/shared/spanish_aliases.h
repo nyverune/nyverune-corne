@@ -1,15 +1,18 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
-#include <keymap_extras/keymap_spanish.h>
+#include <keymap_extras/keymap_spanish_latin_america.h>
 
 /*
- * QMK Spanish QWERTY Keycode definitions and ergonomic aliases.
- * Assumes the host OS input source is set to Spanish (Spain / ISO).
- * Bridges shorthand aliases to QMK's native keymap_spanish.h definitions.
+ * QMK Spanish (Latin America) QWERTY Keycode definitions and ergonomic aliases.
+ * Assumes the host OS input source is set to Spanish (Latin America) [locale 080A].
  */
 
-// Shorthand aliases & compatibility bridges for Nyverune keymaps
+// Shorthand aliases & compatibility bridges
+#ifndef ES_HASH
+#define ES_HASH ES_NUMB
+#endif
+
 #ifndef ES_EXCL
 #define ES_EXCL ES_EXLM
 #endif

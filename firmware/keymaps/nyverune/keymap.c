@@ -15,8 +15,9 @@
 
 /*
  * Unified Nyverune Keymap for Corne (crkbd) 3x6+3
+ * Latin American Spanish QWERTY mapping.
  * Combines Everyday and Neovim profiles into a single firmware image.
- * Dynamic switching via hardware chord (Adjust + E/N/Toggle) or Raw HID desktop protocol.
+ * Dynamic switching via hardware chord (Adjust + E/N/Toggle).
  */
 
 enum custom_keycodes {
@@ -24,6 +25,9 @@ enum custom_keycodes {
     PRF_EVR,
     PRF_NVM,
     PRF_TOGG,
+    SYM_GRV,
+    SYM_TILD,
+    SYM_CIRC,
     VIM_SAVE,
     VIM_QUIT,
     VIM_VSPLIT,
@@ -63,11 +67,14 @@ void keyboard_post_init_user(void) {
     }
 }
 
-// Relaxed tapping term for AltGr / Sym dual-role key
+// Generous tapping terms for dual-role keys
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(_SYM, KC_RALT):
-            return 260;
+            return 380; // Extra generous window for AltGr vs SYM
+        case LCTL_T(KC_ESC):
+        case RCTL_T(KC_ENT):
+            return 260; // Extra generous window for Escape and Enter vs Control
         default:
             return TAPPING_TERM;
     }
@@ -192,14 +199,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_SYM] = LAYOUT_split_3x6_3(
-        KC_TAB,  ES_EXLM, ES_DQUO, ES_HASH, ES_DLR, ES_PERC,
-        ES_AMPR, ES_SLSH, ES_LPRN, ES_RPRN, ES_EQL, KC_DEL,
+        KC_TAB,  ES_EXLM, ES_DQUO, ES_HASH, ES_DLR,  ES_PERC,
+        ES_AMPR, ES_SLSH, ES_LPRN, ES_RPRN, ES_EQL,  KC_BSPC,
 
-        KC_ESC,  ES_BSLS, ES_PIPE, ES_LCBR, ES_RCBR, ES_GRV,
+        KC_ESC,  ES_BSLS, ES_PIPE, ES_LCBR, ES_RCBR, SYM_GRV,
         ES_PLUS, ES_MINS, ES_LBRC, ES_RBRC, ES_ASTR, ES_QUES,
 
-        KC_LSFT, ES_LABK, ES_RABK, ES_ATSN, ES_TILD, ES_EURO,
-        ES_UNDS, ES_COLN, ES_SCLN, ES_IQUE, ES_IEXC, KC_RSFT,
+        KC_LSFT, ES_LABK, ES_RABK, ES_AT,   SYM_TILD, ES_NOT,
+        ES_UNDS, ES_COLN, ES_SCLN, ES_IQUE, ES_IEXL, SYM_CIRC,
 
         KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS
@@ -252,6 +259,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;
             case PRF_TOGG:
                 set_nyverune_profile(current_active_profile == PROFILE_NEOVIM ? PROFILE_EVERYDAY : PROFILE_NEOVIM);
+                return false;
+            case SYM_GRV:
+                // Emit literal backtick on Latin American layout (AltGr + } followed by Space)
+                tap_code16(ALGR(KC_NUHS));
+                tap_code(KC_SPC);
+                return false;
+            case SYM_TILD:
+                // Emit literal tilde on Latin American layout (AltGr + + followed by Space)
+                tap_code16(ALGR(KC_RBRC));
+                tap_code(KC_SPC);
+                return false;
+            case SYM_CIRC:
+                // Emit literal caret on Latin American layout (AltGr + { followed by Space)
+                tap_code16(ALGR(KC_QUOT));
+                tap_code(KC_SPC);
                 return false;
             case VIM_SAVE:
                 send_vim_cmd("w\n");
