@@ -41,6 +41,11 @@ echo "    - ${KEYMAPS_DIR}/nyverune_neovim   -> ${CURRENT_DIR}/keymaps/neovim"
 
 echo ""
 echo "Setup complete! You can now compile using:"
+echo "  # Para RP2040 (recomendado):"
+echo "  qmk compile -kb crkbd/rev1 -km nyverune_everyday -e CONVERT_TO=rp2040_ce"
+echo "  qmk compile -kb crkbd/rev1 -km nyverune_neovim -e CONVERT_TO=rp2040_ce"
+echo ""
+echo "  # Para Pro Micro clásico (ATmega32U4):"
 echo "  qmk compile -kb crkbd/rev1 -km nyverune_everyday"
 echo "  qmk compile -kb crkbd/rev1 -km nyverune_neovim"
 

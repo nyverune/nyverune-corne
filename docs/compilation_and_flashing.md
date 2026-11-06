@@ -49,19 +49,25 @@ ln -sfn "$(pwd)/firmware/keymaps/neovim" "${QMK_DIR}/keyboards/crkbd/keymaps/nyv
 
 ## 3. Compilation Commands
 
-### Everyday Profile:
+### For RP2040 Controllers (Recommended):
 ```bash
-qmk compile -kb crkbd/rev1 -km nyverune_everyday
-```
+# Everyday Profile
+qmk compile -kb crkbd/rev1 -km nyverune_everyday -e CONVERT_TO=rp2040_ce
 
-### Neovim Profile:
+# Neovim Profile
+qmk compile -kb crkbd/rev1 -km nyverune_neovim -e CONVERT_TO=rp2040_ce
+```
+*(Generates `.uf2` file. Also supports `-e CONVERT_TO=sparkfun_pm2040` for official Sparkfun boards).*
+
+### For Classic ATmega32U4 Pro Micro:
 ```bash
+# Everyday Profile
+qmk compile -kb crkbd/rev1 -km nyverune_everyday
+
+# Neovim Profile
 qmk compile -kb crkbd/rev1 -km nyverune_neovim
 ```
-
-The compiled binary will be generated in the root of `qmk_firmware`:
-- For ATmega32U4 (Pro Micro): `crkbd_rev1_nyverune_everyday.hex`
-- For RP2040: `crkbd_rev1_nyverune_everyday.uf2`
+*(Generates `.hex` file).*
 
 ---
 
