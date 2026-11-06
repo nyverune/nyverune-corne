@@ -16,13 +16,14 @@
 /*
  * Unified Nyverune Keymap for Corne (crkbd) 3x6+3
  * Combines Everyday and Neovim profiles into a single firmware image.
- * Dynamic switching via hardware chord (Adjust + E/N) or Raw HID desktop protocol.
+ * Dynamic switching via hardware chord (Adjust + E/N/Toggle) or Raw HID desktop protocol.
  */
 
 enum custom_keycodes {
     RAISE_NAV = SAFE_RANGE,
     PRF_EVR,
     PRF_NVM,
+    PRF_TOGG,
     VIM_SAVE,
     VIM_QUIT,
     VIM_VSPLIT,
@@ -59,6 +60,16 @@ void keyboard_post_init_user(void) {
         current_active_profile = (uint8_t)val;
     } else {
         current_active_profile = PROFILE_EVERYDAY;
+    }
+}
+
+// Relaxed tapping term for AltGr / Sym dual-role key
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(_SYM, KC_RALT):
+            return 260;
+        default:
+            return TAPPING_TERM;
     }
 }
 
@@ -212,14 +223,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  QK_BOOT, KC_NO,   PRF_EVR, KC_NO,   KC_NO,
         KC_NO,   KC_BRID, KC_BRIU, KC_NO,   KC_NO,   QK_BOOT,
 
-        KC_ESC,  EE_CLR,  KC_NO,   KC_NO,   KC_NO,   KC_NO,
+        KC_ESC,  EE_CLR,  KC_NO,   PRF_TOGG, KC_NO,  KC_NO,
         KC_MPRV, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY, KC_MUTE,
 
         KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
         PRF_NVM, NK_TOGG, KC_NO,   KC_NO,   KC_NO,   KC_NO,
 
         KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS
+        KC_TRNS, KC_TRNS, PRF_TOGG
     )
 };
 
@@ -238,6 +249,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;
             case PRF_NVM:
                 set_nyverune_profile(PROFILE_NEOVIM);
+                return false;
+            case PRF_TOGG:
+                set_nyverune_profile(current_active_profile == PROFILE_NEOVIM ? PROFILE_EVERYDAY : PROFILE_NEOVIM);
                 return false;
             case VIM_SAVE:
                 send_vim_cmd("w\n");
@@ -299,10 +313,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
+// Automatic Tri-layer activation: Lower (_NUM) + Dynamic Raise (_NAV / _VIM_NAV) => _ADJUST
 layer_state_t layer_state_set_user(layer_state_t state) {
-    state = update_tri_layer_state(state, _NUM, _NAV, _ADJUST);
-    state = update_tri_layer_state(state, _NUM, _VIM_NAV, _ADJUST);
-    return state;
+    uint8_t raise_layer = (current_active_profile == PROFILE_NEOVIM) ? _VIM_NAV : _NAV;
+    return update_tri_layer_state(state, _NUM, raise_layer, _ADJUST);
 }
 
 #ifdef OLED_ENABLE
@@ -315,38 +329,36 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 
 static void render_status(void) {
     oled_write_P(PSTR("NYVERUNE\n"), false);
-    oled_write_P(PSTR("Profile:\n"), false);
     if (current_active_profile == PROFILE_NEOVIM) {
-        oled_write_P(PSTR("> NEOVIM\n"), true);
+        oled_write_P(PSTR("PRF: NEOVIM\n"), false);
     } else {
-        oled_write_P(PSTR("> EVERYDAY\n"), true);
+        oled_write_P(PSTR("PRF: EVERYDAY\n"), false);
     }
 
-    oled_write_P(PSTR("Layer:\n"), false);
     switch (get_highest_layer(layer_state)) {
         case _BASE:
-            oled_write_P(PSTR(" BASE\n"), false);
+            oled_write_P(PSTR("LYR: BASE\n"), false);
             break;
         case _NAV:
-            oled_write_P(PSTR(" NAV\n"), false);
+            oled_write_P(PSTR("LYR: NAV\n"), false);
             break;
         case _VIM_NAV:
-            oled_write_P(PSTR(" VIM-NAV\n"), false);
+            oled_write_P(PSTR("LYR: VIM-NAV\n"), false);
             break;
         case _VIM_CODE:
-            oled_write_P(PSTR(" VIM-LSP\n"), false);
+            oled_write_P(PSTR("LYR: VIM-LSP\n"), false);
             break;
         case _NUM:
-            oled_write_P(PSTR(" NUM\n"), false);
+            oled_write_P(PSTR("LYR: NUM\n"), false);
             break;
         case _SYM:
-            oled_write_P(PSTR(" SYM\n"), false);
+            oled_write_P(PSTR("LYR: SYM\n"), false);
             break;
         case _ADJUST:
-            oled_write_P(PSTR(" ADJUST\n"), true);
+            oled_write_P(PSTR("LYR: ADJUST\n"), true);
             break;
         default:
-            oled_write_P(PSTR(" OTHER\n"), false);
+            oled_write_P(PSTR("LYR: OTHER\n"), false);
             break;
     }
 }
@@ -364,4 +376,3 @@ bool oled_task_user(void) {
     return false;
 }
 #endif
-
