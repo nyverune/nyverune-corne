@@ -58,9 +58,8 @@
     <rect x="70" y="68" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#EF4444" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="101.0" y="90.0" font-size="12" fill="#EF4444" class="key-main">CLEAR</text>
     <text x="101.0" y="108.0" fill="#D9C4FF" class="key-sub">EEPROM</text>
-    <rect x="140" y="68" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#A855F7" stroke-width="1.6" filter="url(#keyGlow)" />
-    <text x="171.0" y="90.0" font-size="11" fill="#A855F7" class="key-main">Purple</text>
-    <text x="171.0" y="108.0" fill="#A855F7" class="key-sub">Brand</text>
+    <rect x="140" y="68" width="62" height="60" rx="9" ry="9" fill="#130f1b" stroke="#1c1626" stroke-width="1.6" filter="url(#keyGlow)" />
+    <text x="171.0" y="98.0" font-size="14" fill="#443b54" class="key-main">·</text>
     <rect x="210" y="68" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#FF5CB8" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="241.0" y="90.0" font-size="11" fill="#FF5CB8" class="key-main">Toggle</text>
     <text x="241.0" y="108.0" fill="#FF5CB8" class="key-sub">Profile</text>

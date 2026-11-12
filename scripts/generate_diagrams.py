@@ -241,7 +241,6 @@ def parse_key_labels(key_code: str) -> tuple[str, str]:
         "RM_SATD": ("Sat-", "Sat"),
         "RM_VALU": ("Bri+", "RGB"),
         "RM_VALD": ("Bri-", "RGB"),
-        "RGB_NYV": ("Purple", "Brand"),
         "PRF_EVR": ("Everyday", "Profile"),
         "PRF_NVM": ("Neovim", "Profile"),
         "PRF_TOGG": ("Toggle", "Profile"),

@@ -309,7 +309,7 @@
 | R05 | Right | Top Row | `QK_BOOT` | Bootloader Jump |
 | L10 | Left | Home Row | `KC_ESC` | Escape (Esc) |
 | L11 | Left | Home Row | `EE_CLR` | Clear EEPROM |
-| L12 | Left | Home Row | `RGB_NYV` | Nyverune Brand Color (Neon Violet #A855F7) |
+| L12 | Left | Home Row | `KC_NO` | · (No Key) |
 | L13 | Left | Home Row | `PRF_TOGG` | Toggle Everyday / Neovim Profile |
 | L14 | Left | Home Row | `KC_NO` | · (No Key) |
 | L15 | Left | Home Row | `KC_NO` | · (No Key) |

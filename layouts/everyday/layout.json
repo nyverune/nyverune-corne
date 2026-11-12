@@ -224,7 +224,7 @@
         "QK_BOOT",
         "KC_ESC",
         "EE_CLR",
-        "RGB_NYV",
+        "KC_NO",
         "PRF_TOGG",
         "KC_NO",
         "KC_NO",

@@ -60,7 +60,7 @@
 
 ```
 [  Tab  ] [ BOOT  ] [  RGB  ] [Everyday] [Effect ] [Effect ]    [ Hue+  ] [ Hue-  ] [ Sat+  ] [ Sat-  ] [ Bri+  ] [ BOOT  ]
-[  Esc  ] [ CLEAR ] [Purple ] [Toggle ] [   ·   ] [   ·   ]    [ Bri-  ] [ Prev  ] [ Next  ] [ Vol-  ] [ Vol+  ] [ Play  ]
+[  Esc  ] [ CLEAR ] [   ·   ] [Toggle ] [   ·   ] [   ·   ]    [ Bri-  ] [ Prev  ] [ Next  ] [ Vol-  ] [ Vol+  ] [ Play  ]
 [ Shift ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]    [Neovim ] [ NKRO  ] [ Mute  ] [ Bri-  ] [ Bri+  ] [   ·   ]
                               [   ▽   ] [   ▽   ] [   ▽   ]    [   ▽   ] [   ▽   ] [Toggle ]
 ```

@@ -20,12 +20,13 @@
  * Dynamic switching via hardware chord (Adjust + E/N/Toggle).
  */
 
+#define NYVERUNE_EECONFIG_MAGIC 0x56594E03
+
 enum custom_keycodes {
     RAISE_NAV = SAFE_RANGE,
     PRF_EVR,
     PRF_NVM,
     PRF_TOGG,
-    RGB_NYV,
     SYM_GRV,
     SYM_TILD,
     SYM_CIRC,
@@ -52,11 +53,11 @@ uint8_t get_nyverune_profile(void) {
 
 void set_nyverune_profile(uint8_t profile) {
     current_active_profile = (profile == PROFILE_NEOVIM) ? PROFILE_NEOVIM : PROFILE_EVERYDAY;
-    eeconfig_update_user(current_active_profile);
+    eeconfig_update_user(NYVERUNE_EECONFIG_MAGIC | current_active_profile);
 }
 
 void eeconfig_init_user(void) {
-    eeconfig_update_user(PROFILE_EVERYDAY);
+    current_active_profile = PROFILE_EVERYDAY;
 #if defined(RGB_MATRIX_ENABLE)
     rgb_matrix_enable();
     rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
@@ -66,28 +67,31 @@ void eeconfig_init_user(void) {
     rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
     rgblight_sethsv(192, 235, 180);
 #endif
+    eeconfig_update_user(NYVERUNE_EECONFIG_MAGIC | current_active_profile);
 }
 
 void keyboard_post_init_user(void) {
     uint32_t val = eeconfig_read_user();
-    if (val == PROFILE_NEOVIM || val == PROFILE_EVERYDAY) {
-        current_active_profile = (uint8_t)val;
-    } else {
+    if ((val & 0xFFFFFF00) != (NYVERUNE_EECONFIG_MAGIC & 0xFFFFFF00)) {
+        // First boot or EEPROM upgrade: force initialize to Nyverune Brand Purple
         current_active_profile = PROFILE_EVERYDAY;
-    }
 #if defined(RGB_MATRIX_ENABLE)
-    if (!rgb_matrix_is_enabled()) {
         rgb_matrix_enable();
         rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
         rgb_matrix_sethsv(192, 235, 180);
-    }
 #elif defined(RGBLIGHT_ENABLE)
-    if (!rgblight_is_enabled()) {
         rgblight_enable();
         rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
         rgblight_sethsv(192, 235, 180);
-    }
 #endif
+        eeconfig_update_user(NYVERUNE_EECONFIG_MAGIC | current_active_profile);
+    } else {
+        // Subsequent boots: restore saved profile and allow user's custom RGB settings
+        current_active_profile = (uint8_t)(val & 0xFF);
+        if (current_active_profile != PROFILE_NEOVIM && current_active_profile != PROFILE_EVERYDAY) {
+            current_active_profile = PROFILE_EVERYDAY;
+        }
+    }
 }
 
 // Generous tapping terms for dual-role keys
@@ -253,7 +257,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  QK_BOOT, RM_TOGG, PRF_EVR,  RM_NEXT,  RM_PREV,
         RM_HUEU, RM_HUED, RM_SATU, RM_SATD,  RM_VALU,  QK_BOOT,
 
-        KC_ESC,  EE_CLR,  RGB_NYV, PRF_TOGG, KC_NO,    KC_NO,
+        KC_ESC,  EE_CLR,  KC_NO,   PRF_TOGG, KC_NO,    KC_NO,
         RM_VALD, KC_MPRV, KC_MNXT, KC_VOLD,  KC_VOLU,  KC_MPLY,
 
         KC_LSFT, KC_NO,   KC_NO,   KC_NO,    KC_NO,    KC_NO,
@@ -283,17 +287,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case PRF_TOGG:
                 set_nyverune_profile(current_active_profile == PROFILE_NEOVIM ? PROFILE_EVERYDAY : PROFILE_NEOVIM);
                 return false;
-            case RGB_NYV:
-#if defined(RGB_MATRIX_ENABLE)
-                rgb_matrix_enable();
-                rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
-                rgb_matrix_sethsv(192, 235, 180);
-#elif defined(RGBLIGHT_ENABLE)
-                rgblight_enable();
-                rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
-                rgblight_sethsv(192, 235, 180);
-#endif
-                return false;
+
             case SYM_GRV:
                 // Emit literal backtick on Latin American layout (AltGr + } followed by Space)
                 tap_code16(ALGR(KC_NUHS));
@@ -391,7 +385,8 @@ static void render_status(void) {
         oled_write_P(PSTR("PRF: EVERYDAY\n"), false);
     }
 
-    switch (get_highest_layer(layer_state)) {
+    uint8_t layer = get_highest_layer(layer_state);
+    switch (layer) {
         case _BASE:
             oled_write_P(PSTR("LYR: BASE\n"), false);
             break;
@@ -416,6 +411,25 @@ static void render_status(void) {
         default:
             oled_write_P(PSTR("LYR: OTHER\n"), false);
             break;
+    }
+
+    if (layer == _ADJUST) {
+#if defined(RGB_MATRIX_ENABLE)
+        RGB rgb = hsv_to_rgb(rgb_matrix_config.hsv);
+        char clr_buf[22];
+        snprintf(clr_buf, sizeof(clr_buf), "RGB:#%02X%02X%02X H%u\n", rgb.r, rgb.g, rgb.b, (unsigned)rgb_matrix_config.hsv.h);
+        oled_write(clr_buf, false);
+#elif defined(RGBLIGHT_ENABLE)
+        HSV hsv = { rgblight_get_hue(), rgblight_get_sat(), rgblight_get_val() };
+        RGB rgb = hsv_to_rgb(hsv);
+        char clr_buf[22];
+        snprintf(clr_buf, sizeof(clr_buf), "RGB:#%02X%02X%02X H%u\n", rgb.r, rgb.g, rgb.b, (unsigned)hsv.h);
+        oled_write(clr_buf, false);
+#else
+        oled_write_P(PSTR("                    \n"), false);
+#endif
+    } else {
+        oled_write_P(PSTR("                    \n"), false);
     }
 }
 

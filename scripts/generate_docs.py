@@ -99,7 +99,6 @@ def friendly_label(key_code: str) -> str:
         "RM_SATD": "RGB Saturation Down",
         "RM_VALU": "RGB Brightness Up",
         "RM_VALD": "RGB Brightness Down",
-        "RGB_NYV": "Nyverune Brand Color (Neon Violet #A855F7)",
         "PRF_EVR": "Switch to Everyday Profile",
         "PRF_NVM": "Switch to Neovim Profile",
         "PRF_TOGG": "Toggle Everyday / Neovim Profile",
