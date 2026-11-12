@@ -196,7 +196,7 @@
 | R02 | Right | Top Row | `ES_LPRN` | ( (Left Paren) |
 | R03 | Right | Top Row | `ES_RPRN` | ) (Right Paren) |
 | R04 | Right | Top Row | `ES_EQL` | EQL |
-| R05 | Right | Top Row | `KC_DEL` | Delete (Del) |
+| R05 | Right | Top Row | `ES_CIRC` | CIRC |
 | L10 | Left | Home Row | `KC_ESC` | Escape (Esc) |
 | L11 | Left | Home Row | `ES_BSLS` | \ (Backslash) |
 | L12 | Left | Home Row | `ES_PIPE` | | (Pipe) |
@@ -208,19 +208,19 @@
 | R12 | Right | Home Row | `ES_LBRC` | [ (Left Bracket) |
 | R13 | Right | Home Row | `ES_RBRC` | ] (Right Bracket) |
 | R14 | Right | Home Row | `ES_ASTR` | * (Asterisk) |
-| R15 | Right | Home Row | `ES_QUES` | ? (Question) |
+| R15 | Right | Home Row | `ES_QUOT` | QUOT |
 | L20 | Left | Bottom Row | `KC_LSFT` | Left Shift |
 | L21 | Left | Bottom Row | `ES_LABK` | < (Less than) |
 | L22 | Left | Bottom Row | `ES_RABK` | > (Greater than) |
 | L23 | Left | Bottom Row | `ES_ATSN` | @ (At) |
 | L24 | Left | Bottom Row | `ES_TILD` | ~ (Tilde) |
-| L25 | Left | Bottom Row | `ES_EURO` | € (Euro) |
+| L25 | Left | Bottom Row | `ES_NOT` | NOT |
 | R20 | Right | Bottom Row | `ES_UNDS` | _ (Underscore) |
 | R21 | Right | Bottom Row | `ES_COLN` | : (Colon) |
 | R22 | Right | Bottom Row | `ES_SCLN` | ; (Semicolon) |
 | R23 | Right | Bottom Row | `ES_IQUE` | ¿ (Inverted Question) |
-| R24 | Right | Bottom Row | `ES_IEXC` | ¡ (Inverted Exclamation) |
-| R25 | Right | Bottom Row | `KC_RSFT` | Right Shift |
+| R24 | Right | Bottom Row | `ES_QUES` | ? (Question) |
+| R25 | Right | Bottom Row | `ES_IEXC` | ¡ (Inverted Exclamation) |
 | LT0 | Left | Thumb (Outer Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | LT1 | Left | Thumb (Center Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | LT2 | Left | Thumb (Inner Thumb) | `KC_TRNS` | ▽ (Transparent) |
