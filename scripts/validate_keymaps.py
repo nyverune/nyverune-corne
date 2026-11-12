@@ -78,6 +78,7 @@ def main():
     c_keymaps = [
         ROOT_DIR / "firmware" / "keymaps" / "everyday" / "keymap.c",
         ROOT_DIR / "firmware" / "keymaps" / "neovim" / "keymap.c",
+        ROOT_DIR / "firmware" / "keymaps" / "nyverune" / "keymap.c",
     ]
 
     for ck in c_keymaps:

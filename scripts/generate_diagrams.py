@@ -62,6 +62,14 @@ COLORS = {
     "trans": "#130f1b",
     "trans_border": "#1c1626",
     "trans_text": "#443b54",
+
+    "rgb": NYVERUNE_PALETTE["elevated"],
+    "rgb_border": NYVERUNE_PALETTE["neon_violet"],
+    "rgb_text": NYVERUNE_PALETTE["neon_violet"],
+
+    "profile": NYVERUNE_PALETTE["elevated"],
+    "profile_border": NYVERUNE_PALETTE["dream_pink"],
+    "profile_text": NYVERUNE_PALETTE["dream_pink"],
 }
 
 KEY_WIDTH = 62
@@ -79,6 +87,10 @@ def get_key_category(key_name: str) -> str:
         return "trans"
     if any(k in key_name for k in ("QK_BOOT", "EE_CLR", "RESET")):
         return "adjust"
+    if any(k in key_name for k in ("PRF_",)):
+        return "profile"
+    if any(k in key_name for k in ("RM_", "RGB_")):
+        return "rgb"
     if any(k in key_name for k in ("MO(", "LT(", "OSL(")):
         return "thumb_layer"
     if any(k in key_name for k in ("CTL", "SFT", "ALT", "GUI", "LCTL", "LSFT", "LALT", "LGUI", "RALT", "RSFT")):
@@ -216,6 +228,26 @@ def parse_key_labels(key_code: str) -> tuple[str, str]:
         "VIM_HOVER": ("K", "Hover"),
         "VIM_ACT": ("Code", "Action"),
         "VIM_REN": ("Rename", "LSP"),
+        "QUOT": ("'", "?"),
+        "APOS": ("'", ""),
+        "CIRC": ("^", ""),
+        "NOT": ("¬", ""),
+        "RM_TOGG": ("RGB", "Toggle"),
+        "RM_NEXT": ("Effect", "Next"),
+        "RM_PREV": ("Effect", "Prev"),
+        "RM_HUEU": ("Hue+", "Color"),
+        "RM_HUED": ("Hue-", "Color"),
+        "RM_SATU": ("Sat+", "Sat"),
+        "RM_SATD": ("Sat-", "Sat"),
+        "RM_VALU": ("Bri+", "RGB"),
+        "RM_VALD": ("Bri-", "RGB"),
+        "RGB_NYV": ("Purple", "Brand"),
+        "PRF_EVR": ("Everyday", "Profile"),
+        "PRF_NVM": ("Neovim", "Profile"),
+        "PRF_TOGG": ("Toggle", "Profile"),
+        "SYM_CIRC": ("^", ""),
+        "SYM_GRV": ("`", ""),
+        "SYM_TILD": ("~", ""),
     }
 
     if key_code in mappings:
@@ -276,7 +308,12 @@ def render_svg_layer(profile_name: str, layer_data: dict) -> str:
         bg_col = COLORS.get(f"{category}", COLORS["alpha"])
         border_col = COLORS.get(f"{category}_border", COLORS["border"])
         main_text_col = COLORS.get(f"{category}_text", COLORS["text"])
-        sub_text_col = NYVERUNE_PALETTE["soft_lilac"] if category != "thumb_layer" else NYVERUNE_PALETTE["dream_pink"]
+        if category in ("thumb_layer", "profile"):
+            sub_text_col = NYVERUNE_PALETTE["dream_pink"]
+        elif category == "rgb":
+            sub_text_col = NYVERUNE_PALETTE["neon_violet"]
+        else:
+            sub_text_col = NYVERUNE_PALETTE["soft_lilac"]
 
         if len(main_label) >= 6:
             font_size = 11

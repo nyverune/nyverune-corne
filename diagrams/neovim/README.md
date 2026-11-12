@@ -46,9 +46,9 @@
 ### Layer 2: SYM (Programming & Spanish Symbols)
 
 ```
-[  Tab  ] [   !   ] [   "   ] [   #   ] [   $   ] [   %   ]    [   &   ] [   /   ] [   (   ] [   )   ] [   =   ] [ CIRC  ]
-[  Esc  ] [   \   ] [   |   ] [   {   ] [   }   ] [   `   ]    [   +   ] [   -   ] [   [   ] [   ]   ] [   *   ] [ QUOT  ]
-[ Shift ] [   <   ] [   >   ] [   @   ] [   ~   ] [  NOT  ]    [   _   ] [   :   ] [   ;   ] [   ¿   ] [   ?   ] [   ¡   ]
+[  Tab  ] [   !   ] [   "   ] [   #   ] [   $   ] [   %   ]    [   &   ] [   /   ] [   (   ] [   )   ] [   =   ] [   ^   ]
+[  Esc  ] [   \   ] [   |   ] [   {   ] [   }   ] [   `   ]    [   +   ] [   -   ] [   [   ] [   ]   ] [   *   ] [   '   ]
+[ Shift ] [   <   ] [   >   ] [   @   ] [   ~   ] [   ¬   ]    [   _   ] [   :   ] [   ;   ] [   ¿   ] [   ?   ] [   ¡   ]
                               [   ▽   ] [   ▽   ] [   ▽   ]    [   ▽   ] [   ▽   ] [   ▽   ]
 ```
 
@@ -72,8 +72,8 @@
 ### Layer 7: ADJUST (System & Hardware Control)
 
 ```
-[  Tab  ] [ BOOT  ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]    [   ·   ] [ Bri-  ] [ Bri+  ] [   ·   ] [   ·   ] [ BOOT  ]
-[  Esc  ] [ CLEAR ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]    [ Prev  ] [ Next  ] [ Vol-  ] [ Vol+  ] [ Play  ] [ Mute  ]
-[ Shift ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]    [ NKRO  ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]
-                              [   ▽   ] [   ▽   ] [   ▽   ]    [   ▽   ] [   ▽   ] [   ▽   ]
+[  Tab  ] [ BOOT  ] [  RGB  ] [Everyday] [Effect ] [Effect ]    [ Hue+  ] [ Hue-  ] [ Sat+  ] [ Sat-  ] [ Bri+  ] [ BOOT  ]
+[  Esc  ] [ CLEAR ] [Purple ] [Toggle ] [   ·   ] [   ·   ]    [ Bri-  ] [ Prev  ] [ Next  ] [ Vol-  ] [ Vol+  ] [ Play  ]
+[ Shift ] [   ·   ] [   ·   ] [   ·   ] [   ·   ] [   ·   ]    [Neovim ] [ NKRO  ] [ Mute  ] [ Bri-  ] [ Bri+  ] [   ·   ]
+                              [   ▽   ] [   ▽   ] [   ▽   ]    [   ▽   ] [   ▽   ] [Toggle ]
 ```

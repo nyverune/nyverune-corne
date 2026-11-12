@@ -43,7 +43,7 @@
     <text x="795.0" y="22.0" font-size="14" fill="#F6F0FC" class="key-main">=</text>
     <text x="795.0" y="40.0" fill="#D9C4FF" class="key-sub">+</text>
     <rect x="834" y="0" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
-    <text x="865.0" y="30.0" font-size="12" fill="#F6F0FC" class="key-main">CIRC</text>
+    <text x="865.0" y="30.0" font-size="14" fill="#F6F0FC" class="key-main">^</text>
     <rect x="0" y="68" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="31.0" y="98.0" font-size="14" fill="#F6F0FC" class="key-main">Esc</text>
     <rect x="70" y="68" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
@@ -70,7 +70,8 @@
     <rect x="764" y="68" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="795.0" y="98.0" font-size="14" fill="#F6F0FC" class="key-main">*</text>
     <rect x="834" y="68" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
-    <text x="865.0" y="98.0" font-size="12" fill="#F6F0FC" class="key-main">QUOT</text>
+    <text x="865.0" y="90.0" font-size="14" fill="#F6F0FC" class="key-main">&#x27;</text>
+    <text x="865.0" y="108.0" fill="#D9C4FF" class="key-sub">?</text>
     <rect x="0" y="136" width="62" height="60" rx="9" ry="9" fill="#21182B" stroke="#7E22CE" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="31.0" y="158.0" font-size="12" fill="#A855F7" class="key-main">Shift</text>
     <text x="31.0" y="176.0" fill="#D9C4FF" class="key-sub">⇧</text>
@@ -83,7 +84,7 @@
     <rect x="280" y="136" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="311.0" y="166.0" font-size="14" fill="#F6F0FC" class="key-main">~</text>
     <rect x="350" y="136" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
-    <text x="381.0" y="166.0" font-size="14" fill="#F6F0FC" class="key-main">NOT</text>
+    <text x="381.0" y="166.0" font-size="14" fill="#F6F0FC" class="key-main">¬</text>
     <rect x="484" y="136" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />
     <text x="515.0" y="166.0" font-size="14" fill="#F6F0FC" class="key-main">_</text>
     <rect x="554" y="136" width="62" height="60" rx="9" ry="9" fill="#181224" stroke="#2c1e40" stroke-width="1.6" filter="url(#keyGlow)" />

@@ -196,7 +196,7 @@
 | R02 | Right | Top Row | `ES_LPRN` | ( (Left Paren) |
 | R03 | Right | Top Row | `ES_RPRN` | ) (Right Paren) |
 | R04 | Right | Top Row | `ES_EQL` | EQL |
-| R05 | Right | Top Row | `ES_CIRC` | CIRC |
+| R05 | Right | Top Row | `ES_CIRC` | ^ (Caret) |
 | L10 | Left | Home Row | `KC_ESC` | Escape (Esc) |
 | L11 | Left | Home Row | `ES_BSLS` | \ (Backslash) |
 | L12 | Left | Home Row | `ES_PIPE` | | (Pipe) |
@@ -208,13 +208,13 @@
 | R12 | Right | Home Row | `ES_LBRC` | [ (Left Bracket) |
 | R13 | Right | Home Row | `ES_RBRC` | ] (Right Bracket) |
 | R14 | Right | Home Row | `ES_ASTR` | * (Asterisk) |
-| R15 | Right | Home Row | `ES_QUOT` | QUOT |
+| R15 | Right | Home Row | `ES_QUOT` | ' ? (Apostrophe / Single Quote) |
 | L20 | Left | Bottom Row | `KC_LSFT` | Left Shift |
 | L21 | Left | Bottom Row | `ES_LABK` | < (Less than) |
 | L22 | Left | Bottom Row | `ES_RABK` | > (Greater than) |
 | L23 | Left | Bottom Row | `ES_ATSN` | @ (At) |
 | L24 | Left | Bottom Row | `ES_TILD` | ~ (Tilde) |
-| L25 | Left | Bottom Row | `ES_NOT` | NOT |
+| L25 | Left | Bottom Row | `ES_NOT` | ¬ (Logical NOT) |
 | R20 | Right | Bottom Row | `ES_UNDS` | _ (Underscore) |
 | R21 | Right | Bottom Row | `ES_COLN` | : (Colon) |
 | R22 | Right | Bottom Row | `ES_SCLN` | ; (Semicolon) |
@@ -287,7 +287,7 @@
 
 ## Layer 7: ADJUST — System & Hardware Control
 
-*Hardware reset, bootloader, audio and OS controls.*
+*Triggered by holding Lower + Raise thumbs together. Hardware reset, profile switching, RGB lighting, audio and media controls.*
 
 ![Diagram](../diagrams/neovim/layer_7_adjust.svg)
 
@@ -297,45 +297,45 @@
 |---|---|---|---|---|
 | L00 | Left | Top Row | `KC_TAB` | Tab (⇥) |
 | L01 | Left | Top Row | `QK_BOOT` | Bootloader Jump |
-| L02 | Left | Top Row | `KC_NO` | · (No Key) |
-| L03 | Left | Top Row | `KC_NO` | · (No Key) |
-| L04 | Left | Top Row | `KC_NO` | · (No Key) |
-| L05 | Left | Top Row | `KC_NO` | · (No Key) |
-| R00 | Right | Top Row | `KC_NO` | · (No Key) |
-| R01 | Right | Top Row | `KC_BRID` | Brightness Down |
-| R02 | Right | Top Row | `KC_BRIU` | Brightness Up |
-| R03 | Right | Top Row | `KC_NO` | · (No Key) |
-| R04 | Right | Top Row | `KC_NO` | · (No Key) |
+| L02 | Left | Top Row | `RM_TOGG` | RGB Matrix Toggle |
+| L03 | Left | Top Row | `PRF_EVR` | Switch to Everyday Profile |
+| L04 | Left | Top Row | `RM_NEXT` | Next RGB Matrix Effect |
+| L05 | Left | Top Row | `RM_PREV` | Previous RGB Matrix Effect |
+| R00 | Right | Top Row | `RM_HUEU` | RGB Hue Up (Cycle Color) |
+| R01 | Right | Top Row | `RM_HUED` | RGB Hue Down |
+| R02 | Right | Top Row | `RM_SATU` | RGB Saturation Up |
+| R03 | Right | Top Row | `RM_SATD` | RGB Saturation Down |
+| R04 | Right | Top Row | `RM_VALU` | RGB Brightness Up |
 | R05 | Right | Top Row | `QK_BOOT` | Bootloader Jump |
 | L10 | Left | Home Row | `KC_ESC` | Escape (Esc) |
 | L11 | Left | Home Row | `EE_CLR` | Clear EEPROM |
-| L12 | Left | Home Row | `KC_NO` | · (No Key) |
-| L13 | Left | Home Row | `KC_NO` | · (No Key) |
+| L12 | Left | Home Row | `RGB_NYV` | Nyverune Brand Color (Neon Violet #A855F7) |
+| L13 | Left | Home Row | `PRF_TOGG` | Toggle Everyday / Neovim Profile |
 | L14 | Left | Home Row | `KC_NO` | · (No Key) |
 | L15 | Left | Home Row | `KC_NO` | · (No Key) |
-| R10 | Right | Home Row | `KC_MPRV` | Previous Track |
-| R11 | Right | Home Row | `KC_MNXT` | Next Track |
-| R12 | Right | Home Row | `KC_VOLD` | Volume Down |
-| R13 | Right | Home Row | `KC_VOLU` | Volume Up |
-| R14 | Right | Home Row | `KC_MPLY` | Play / Pause |
-| R15 | Right | Home Row | `KC_MUTE` | Mute Audio |
+| R10 | Right | Home Row | `RM_VALD` | RGB Brightness Down |
+| R11 | Right | Home Row | `KC_MPRV` | Previous Track |
+| R12 | Right | Home Row | `KC_MNXT` | Next Track |
+| R13 | Right | Home Row | `KC_VOLD` | Volume Down |
+| R14 | Right | Home Row | `KC_VOLU` | Volume Up |
+| R15 | Right | Home Row | `KC_MPLY` | Play / Pause |
 | L20 | Left | Bottom Row | `KC_LSFT` | Left Shift |
 | L21 | Left | Bottom Row | `KC_NO` | · (No Key) |
 | L22 | Left | Bottom Row | `KC_NO` | · (No Key) |
 | L23 | Left | Bottom Row | `KC_NO` | · (No Key) |
 | L24 | Left | Bottom Row | `KC_NO` | · (No Key) |
 | L25 | Left | Bottom Row | `KC_NO` | · (No Key) |
-| R20 | Right | Bottom Row | `NK_TOGG` | Toggle NKRO |
-| R21 | Right | Bottom Row | `KC_NO` | · (No Key) |
-| R22 | Right | Bottom Row | `KC_NO` | · (No Key) |
-| R23 | Right | Bottom Row | `KC_NO` | · (No Key) |
-| R24 | Right | Bottom Row | `KC_NO` | · (No Key) |
+| R20 | Right | Bottom Row | `PRF_NVM` | Switch to Neovim Profile |
+| R21 | Right | Bottom Row | `NK_TOGG` | Toggle NKRO |
+| R22 | Right | Bottom Row | `KC_MUTE` | Mute Audio |
+| R23 | Right | Bottom Row | `KC_BRID` | Brightness Down |
+| R24 | Right | Bottom Row | `KC_BRIU` | Brightness Up |
 | R25 | Right | Bottom Row | `KC_NO` | · (No Key) |
 | LT0 | Left | Thumb (Outer Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | LT1 | Left | Thumb (Center Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | LT2 | Left | Thumb (Inner Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | RT0 | Right | Thumb (Inner Thumb) | `KC_TRNS` | ▽ (Transparent) |
 | RT1 | Right | Thumb (Center Thumb) | `KC_TRNS` | ▽ (Transparent) |
-| RT2 | Right | Thumb (Outer Thumb) | `KC_TRNS` | ▽ (Transparent) |
+| RT2 | Right | Thumb (Outer Thumb) | `PRF_TOGG` | Toggle Everyday / Neovim Profile |
 
 ---
