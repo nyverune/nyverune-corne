@@ -25,6 +25,7 @@ enum custom_keycodes {
     PRF_EVR,
     PRF_NVM,
     PRF_TOGG,
+    RGB_NYV,
     SYM_GRV,
     SYM_TILD,
     SYM_CIRC,
@@ -56,6 +57,15 @@ void set_nyverune_profile(uint8_t profile) {
 
 void eeconfig_init_user(void) {
     eeconfig_update_user(PROFILE_EVERYDAY);
+#if defined(RGB_MATRIX_ENABLE)
+    rgb_matrix_enable();
+    rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
+    rgb_matrix_sethsv(192, 235, 180);
+#elif defined(RGBLIGHT_ENABLE)
+    rgblight_enable();
+    rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
+    rgblight_sethsv(192, 235, 180);
+#endif
 }
 
 void keyboard_post_init_user(void) {
@@ -65,6 +75,19 @@ void keyboard_post_init_user(void) {
     } else {
         current_active_profile = PROFILE_EVERYDAY;
     }
+#if defined(RGB_MATRIX_ENABLE)
+    if (!rgb_matrix_is_enabled()) {
+        rgb_matrix_enable();
+        rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
+        rgb_matrix_sethsv(192, 235, 180);
+    }
+#elif defined(RGBLIGHT_ENABLE)
+    if (!rgblight_is_enabled()) {
+        rgblight_enable();
+        rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
+        rgblight_sethsv(192, 235, 180);
+    }
+#endif
 }
 
 // Generous tapping terms for dual-role keys
@@ -227,14 +250,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_ADJUST] = LAYOUT_split_3x6_3(
-        KC_TAB,  QK_BOOT, KC_NO,   PRF_EVR, KC_NO,   KC_NO,
-        KC_NO,   KC_BRID, KC_BRIU, KC_NO,   KC_NO,   QK_BOOT,
+        KC_TAB,  QK_BOOT, RM_TOGG, PRF_EVR,  RM_NEXT,  RM_PREV,
+        RM_HUEU, RM_HUED, RM_SATU, RM_SATD,  RM_VALU,  QK_BOOT,
 
-        KC_ESC,  EE_CLR,  KC_NO,   PRF_TOGG, KC_NO,  KC_NO,
-        KC_MPRV, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY, KC_MUTE,
+        KC_ESC,  EE_CLR,  RGB_NYV, PRF_TOGG, KC_NO,    KC_NO,
+        RM_VALD, KC_MPRV, KC_MNXT, KC_VOLD,  KC_VOLU,  KC_MPLY,
 
-        KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-        PRF_NVM, NK_TOGG, KC_NO,   KC_NO,   KC_NO,   KC_NO,
+        KC_LSFT, KC_NO,   KC_NO,   KC_NO,    KC_NO,    KC_NO,
+        PRF_NVM, NK_TOGG, KC_MUTE, KC_BRID,  KC_BRIU,  KC_NO,
 
         KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, PRF_TOGG
@@ -259,6 +282,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;
             case PRF_TOGG:
                 set_nyverune_profile(current_active_profile == PROFILE_NEOVIM ? PROFILE_EVERYDAY : PROFILE_NEOVIM);
+                return false;
+            case RGB_NYV:
+#if defined(RGB_MATRIX_ENABLE)
+                rgb_matrix_enable();
+                rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
+                rgb_matrix_sethsv(192, 235, 180);
+#elif defined(RGBLIGHT_ENABLE)
+                rgblight_enable();
+                rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
+                rgblight_sethsv(192, 235, 180);
+#endif
                 return false;
             case SYM_GRV:
                 // Emit literal backtick on Latin American layout (AltGr + } followed by Space)
